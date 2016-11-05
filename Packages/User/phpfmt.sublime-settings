@@ -1,0 +1,13 @@
+{
+	"autocomplete": true,
+	"enable_auto_align": true,
+	"format_on_save": true,
+	"indent_with_space": true,
+	"passes":
+	[
+		"MergeElseIf"
+	],
+	"php_bin": "/usr/bin/php71",
+	"psr2": true,
+	"version": 3
+}
