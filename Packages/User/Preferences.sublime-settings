@@ -1,12 +1,12 @@
 {
-	"color_scheme": "Packages/Theme - Afterglow/Afterglow-monokai.tmTheme",
+	"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
 	"detect_indentation": false,
 	"font_face": "Inconsolata",
 	"font_options":
 	[
 		"directwrite"
 	],
-	"font_size": 14,
+	"font_size": 15,
 	"ignored_packages":
 	[
 		"Vintage"

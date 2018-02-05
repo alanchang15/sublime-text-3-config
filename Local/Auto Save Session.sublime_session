@@ -1,178 +1,20 @@
 {
 	"folder_history":
 	[
+		"/home/alan/diskstation/share/alan-workspace/workspace",
+		"/home/alan/diskstation/share/alan-workspace/php-workspace",
+		"/home/alan/workspace/dahan-app-cn",
+		"/home/alan/diskstation/share/alan-workspace/dahan-workspace",
+		"/home/alan/diskstation/alan-workspace/dahan-workspace",
 		"/run/media/alan/64GUSB/dahan-workspace"
 	],
-	"last_version": 3126,
-	"last_window_id": 8,
+	"last_version": 3143,
+	"last_window_id": 14,
 	"log_indexing": false,
 	"settings":
 	{
 		"new_window_height": 0.0,
 		"new_window_settings":
-		{
-			"auto_complete":
-			{
-				"selected_items":
-				[
-					[
-						"error",
-						"error_reporting"
-					]
-				]
-			},
-			"build_system_choices":
-			[
-			],
-			"build_varint": "",
-			"command_palette":
-			{
-				"height": 202.0,
-				"last_filter": "Package Control: ins",
-				"selected_items":
-				[
-					[
-						"Package Control: ins",
-						"Package Control: Install Package"
-					],
-					[
-						"Package Control: remo",
-						"Package Control: Remove Package"
-					],
-					[
-						"Package Control: in",
-						"Package Control: Install Package"
-					],
-					[
-						"Package Control: install",
-						"Package Control: Install Package"
-					]
-				],
-				"width": 529.0
-			},
-			"console":
-			{
-				"height": 120.0,
-				"history":
-				[
-					"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
-				]
-			},
-			"distraction_free":
-			{
-				"menu_visible": true,
-				"show_minimap": false,
-				"show_open_files": false,
-				"show_tabs": false,
-				"side_bar_visible": false,
-				"status_bar_visible": false
-			},
-			"file_history":
-			[
-				"/root/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-				"/root/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/public/assets/js/app/sell_order.js",
-				"/root/.config/sublime-text-3/Packages/phpfmt/phpfmt.sublime-settings",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Platform/MicroSova.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/cli.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/captcha.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/return.php"
-			],
-			"find":
-			{
-				"height": 26.0
-			},
-			"find_in_files":
-			{
-				"height": 0.0,
-				"where_history":
-				[
-				]
-			},
-			"find_state":
-			{
-				"case_sensitive": false,
-				"find_history":
-				[
-					" {"
-				],
-				"highlight": true,
-				"in_selection": false,
-				"preserve_case": false,
-				"regex": false,
-				"replace_history":
-				[
-				],
-				"reverse": false,
-				"show_context": true,
-				"use_buffer2": true,
-				"whole_word": false,
-				"wrap": true
-			},
-			"incremental_find":
-			{
-				"height": 26.0
-			},
-			"input":
-			{
-				"height": 0.0
-			},
-			"menu_visible": true,
-			"output.find_results":
-			{
-				"height": 0.0
-			},
-			"output.sftp":
-			{
-				"height": 116.0
-			},
-			"pinned_build_system": "",
-			"replace":
-			{
-				"height": 48.0
-			},
-			"save_all_on_build": true,
-			"select_file":
-			{
-				"height": 0.0,
-				"last_filter": "",
-				"selected_items":
-				[
-				],
-				"width": 0.0
-			},
-			"select_project":
-			{
-				"height": 0.0,
-				"last_filter": "",
-				"selected_items":
-				[
-				],
-				"width": 0.0
-			},
-			"select_symbol":
-			{
-				"height": 0.0,
-				"last_filter": "",
-				"selected_items":
-				[
-				],
-				"width": 0.0
-			},
-			"show_minimap": true,
-			"show_open_files": true,
-			"show_tabs": true,
-			"side_bar_visible": true,
-			"side_bar_width": 377.0,
-			"status_bar_visible": true,
-			"template_settings":
-			{
-			}
-		},
-		"new_window_width": 0.0
-	},
-	"windows":
-	[
 		{
 			"auto_complete":
 			{
@@ -196,207 +38,6 @@
 					]
 				]
 			},
-			"buffers":
-			[
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/PtModule.php",
-					"settings":
-					{
-						"buffer_size": 1501,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/common_helper.php",
-					"settings":
-					{
-						"buffer_size": 2576,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/menu_helper.php",
-					"settings":
-					{
-						"buffer_size": 5143,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/password_helper.php",
-					"settings":
-					{
-						"buffer_size": 113,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/hooks/auth.php",
-					"settings":
-					{
-						"buffer_size": 1371,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/hooks/redirect.php",
-					"settings":
-					{
-						"buffer_size": 1683,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/languages/cn/frontend.php",
-					"settings":
-					{
-						"buffer_size": 8446,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/scheduler.php",
-					"settings":
-					{
-						"buffer_size": 1915,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/home/alan/.config/sublime-text-3/Packages/User/Terminal.sublime-settings",
-					"settings":
-					{
-						"buffer_size": 459,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/helpers/ag_api.php",
-					"settings":
-					{
-						"buffer_size": 522,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/usr/share/gnome-shell/theme/gnome-classic.css",
-					"settings":
-					{
-						"buffer_size": 45796,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/logs/sova_game_record.log",
-					"settings":
-					{
-						"buffer_size": 137,
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/db_backup.php",
-					"settings":
-					{
-						"buffer_size": 3401,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/email_queue.php",
-					"settings":
-					{
-						"buffer_size": 3254,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/restore_point.php",
-					"settings":
-					{
-						"buffer_size": 2098,
-						"encoding": "UTF-8",
-						"line_ending": "Windows"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/sova_game_record.php",
-					"settings":
-					{
-						"buffer_size": 3608,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/sova_game_report.php",
-					"settings":
-					{
-						"buffer_size": 1805,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"contents": "Type to search: ",
-					"settings":
-					{
-						"buffer_size": 16,
-						"line_ending": "Unix",
-						"name": "Instant File Search",
-						"scratch": true
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Controllers/IndexController.php",
-					"settings":
-					{
-						"buffer_size": 1187,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Views/index.twig",
-					"settings":
-					{
-						"buffer_size": 0,
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Views/play.twig",
-					"settings":
-					{
-						"buffer_size": 0,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Ag/AgModule.php",
-					"settings":
-					{
-						"buffer_size": 1539,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					}
-				}
-			],
-			"build_system": "",
 			"build_system_choices":
 			[
 			],
@@ -443,60 +84,30 @@
 				"side_bar_visible": false,
 				"status_bar_visible": false
 			},
-			"expanded_folders":
-			[
-				"/run/media/alan/64GUSB/dahan-workspace",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/bootstrap",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/logs",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/helpers",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/languages",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/languages/cn",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/languages/tw",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/agent",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/cashflow",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/content",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/cron",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/database",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/sell",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/service",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/api",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/AG",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Cache",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Dropbox",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Dropbox/Exception",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Dropbox/WebAuthException",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Dropbox/certs",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Facade",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/ImportHandler",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/ImportHandler/AgentImport",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Menu",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/MicroSova",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/PT",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Payment",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Payment/Methods",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Payment/Provider",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Platform",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Session",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Simple",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Validator",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/View",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/View/Extension",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/views",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/record"
-			],
 			"file_history":
 			[
+				"/home/alan/.config/sublime-text-3/Packages/User/phpfmt.sublime-settings",
+				"/usr/share/gnome-shell/theme/gnome-classic.css",
+				"/home/alan/.config/sublime-text-3/Packages/User/Terminal.sublime-settings",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Ag/AgModule.php",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Views/play.twig",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Views/index.twig",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Controllers/IndexController.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/sova_game_report.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/sova_game_record.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/restore_point.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/email_queue.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/db_backup.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/logs/sova_game_record.log",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/helpers/ag_api.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/scheduler.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/languages/cn/frontend.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/hooks/redirect.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/hooks/auth.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/password_helper.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/menu_helper.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/common_helper.php",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/PtModule.php",
 				"/home/alan/.config/sublime-text-3/Packages/Terminal/Terminal.sublime-settings",
 				"/home/alan/.config/sublime-text-3/Packages/User/SFTP.sublime-settings",
 				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Platform/MicroSova.php",
@@ -602,33 +213,360 @@
 				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Notification.php",
 				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Order.php",
 				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/PaymentBank.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/PaymentMethod.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Service.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/ServiceRatio.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/ServiceShift.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Setting.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Sidebar.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/SovaBalance.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/SovaGameReport.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/SovaTransfer.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/TransferHistory.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/User.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/UserRole.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Video.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/VideoLang.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/WebSession.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/agent/agent_detail.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/agent/betting.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/agent/betting_delete.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/agent/betting_detail.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/agent/betting_ratio.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/agent/betting_ratio_update.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/agent/bonus_ratio.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/agent/bonus_ratio_update.php"
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/PaymentMethod.php"
 			],
 			"find":
 			{
-				"height": 38.0
+				"height": 29.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"#8DCD41",
+					"\n    ",
+					"        \n",
+					"<?",
+					"();",
+					"$transfer",
+					" {"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+					"#EEE"
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 29.0
+			},
+			"input":
+			{
+				"height": 36.0
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"output.sftp":
+			{
+				"height": 116.0
+			},
+			"pinned_build_system": "",
+			"replace":
+			{
+				"height": 54.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": true,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 312.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 0.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"Twig",
+						"Twig_SimpleFunction"
+					],
+					[
+						"Twi",
+						"Twig_SimpleFunction"
+					],
+					[
+						"out",
+						"out_platform"
+					],
+					[
+						"error",
+						"error_reporting"
+					]
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": "/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/app/config/app.php",
+					"settings":
+					{
+						"buffer_size": 2234,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/live/kefu-service/test/Events.php",
+					"settings":
+					{
+						"buffer_size": 43,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/app/config/gamble.php",
+					"settings":
+					{
+						"buffer_size": 6162,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 202.0,
+				"last_filter": "Package Control: ins",
+				"selected_items":
+				[
+					[
+						"Package Control: ins",
+						"Package Control: Install Package"
+					],
+					[
+						"vme",
+						"View: Toggle Menu"
+					],
+					[
+						"Package Control: remo",
+						"Package Control: Remove Package"
+					],
+					[
+						"Package Control: in",
+						"Package Control: Install Package"
+					],
+					[
+						"Package Control: install",
+						"Package Control: Install Package"
+					]
+				],
+				"width": 504.0
+			},
+			"console":
+			{
+				"height": 120.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": false,
+				"show_minimap": true,
+				"show_open_files": true,
+				"show_tabs": false,
+				"side_bar_visible": true,
+				"status_bar_visible": false
+			},
+			"expanded_folders":
+			[
+				"/home/alan/diskstation/share/alan-workspace/dahan-workspace",
+				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend",
+				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/live",
+				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/live/kefu-service",
+				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/live/kefu-service/test",
+				"/home/alan/diskstation/share/alan-workspace/workspace",
+				"/home/alan/diskstation/share/alan-workspace/workspace/dev.i-net.cu.cc",
+				"/home/alan/diskstation/share/alan-workspace/workspace/i-net.cu.cc",
+				"/home/alan/diskstation/share/alan-workspace/workspace/nancy"
+			],
+			"file_history":
+			[
+				"/home/alan/workspace/dahan-app-cn/config.xml",
+				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/app/routes/admin/member/logout.php",
+				"/home/alan/Afterglow.sublime-theme",
+				"/home/alan/diskstation/alan-workspace/dahan-workspace/dahan168-backend/app/src/Gamble/MG/Client.php",
+				"/home/alan/.config/sublime-text-3/Packages/User/phpfmt.sublime-settings",
+				"/usr/share/gnome-shell/theme/gnome-classic.css",
+				"/home/alan/.config/sublime-text-3/Packages/User/Terminal.sublime-settings",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Ag/AgModule.php",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Views/play.twig",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Views/index.twig",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Controllers/IndexController.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/sova_game_report.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/sova_game_record.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/restore_point.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/email_queue.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/db_backup.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/logs/sova_game_record.log",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/helpers/ag_api.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/scheduler.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/languages/cn/frontend.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/hooks/redirect.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/hooks/auth.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/password_helper.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/menu_helper.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/common_helper.php",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/PtModule.php",
+				"/home/alan/.config/sublime-text-3/Packages/Terminal/Terminal.sublime-settings",
+				"/home/alan/.config/sublime-text-3/Packages/User/SFTP.sublime-settings",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Platform/MicroSova.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/AbstractPlatform.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Browser.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Cache.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Config.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Email.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/EmailTemplate.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Engine.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Executor.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Facade.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/GameConfig.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Http.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/ImportHandler.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Inflector.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Pagination.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/PhalconPHP.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Platform.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Pusher.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Template.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/UploadHandler.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Validator.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/account_member.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/account_member_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/account_update.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/category.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/category_status.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/category_update.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/game_account_status.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/import.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/match.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/product.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/product_create.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/product_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/product_delete_all.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/product_import.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/role.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/role_create.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/role_update.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/user.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/user_create.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/user_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/user_status.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/user_supervision.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/user_update.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/game_balance.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/game_detail.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/game_history.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/game_history_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/game_transfer.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/game_transfer_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/ip_black.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/ip_black_create.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/ip_black_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/ip_black_delete_all.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/logout.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/online.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/sell_point.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/sell_point_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/sell_point_delete_all.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/sell_point_update.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/transfer.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/transfer_point.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/transfer_point_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/transfer_point_delete_all.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/transfer_point_update.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/languages/tw/lobby.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/languages/tw/sms.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Agent.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/AgentDetail.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/AlipayUrl.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Article.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Av.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Bank.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Bet.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BetLog.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Betting.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BettingDetail.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BettingLevel.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BettingRatio.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BonusLevel.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BonusRatio.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Bulletin.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BulletinLang.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/CronTask.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/EmailQueue.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Explain.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/ExplainLang.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameAccount.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameCategory.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameDetail.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameProduct.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameProductPrice.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameRecord.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/IpBlack.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Language.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Member.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/MemberDelete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/MemberTransfer.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Message.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Notice.php"
+			],
+			"find":
+			{
+				"height": 29.0
 			},
 			"find_in_files":
 			{
@@ -667,102 +605,72 @@
 			"folders":
 			[
 				{
-					"path": "/run/media/alan/64GUSB/dahan-workspace"
+					"path": "/home/alan/diskstation/share/alan-workspace/dahan-workspace"
+				},
+				{
+					"path": "/home/alan/workspace/dahan-app-cn"
+				},
+				{
+					"path": "/home/alan/diskstation/share/alan-workspace/php-workspace"
+				},
+				{
+					"path": "/home/alan/diskstation/share/alan-workspace/workspace"
 				}
 			],
 			"groups":
 			[
 				{
-					"selected": 8,
+					"selected": 1,
 					"sheets":
 					[
 						{
 							"buffer": 0,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/PtModule.php",
+							"file": "/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/app/config/app.php",
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 1501,
+								"buffer_size": 2234,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										583,
-										583
+										1808,
+										1808
 									]
 								],
 								"settings":
 								{
 									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
+									"bracket_highlighter.clone": -1,
+									"bracket_highlighter.clone_locations":
 									{
 										"close":
 										{
-											"1":
-											[
-												582,
-												583
-											]
 										},
 										"icon":
 										{
-											"1":
-											[
-												"Packages/BracketHighlighter/icons/curly_bracket.png",
-												"brackethighlighter.default"
-											]
 										},
 										"open":
 										{
-											"1":
-											[
-												525,
-												526
-											]
 										},
 										"unmatched":
 										{
 										}
 									},
-									"bracket_highlighter.regions":
+									"bracket_highlighter.clone_regions":
 									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
 										"bh_regex",
 										"bh_regex_center",
 										"bh_regex_open",
 										"bh_regex_close",
 										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
 										"bh_curly",
 										"bh_curly_center",
 										"bh_curly_open",
@@ -773,75 +681,11 @@
 										"bh_double_quote_open",
 										"bh_double_quote_close",
 										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"open_with_edit": true,
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 16,
-							"type": "text"
-						},
-						{
-							"buffer": 1,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/common_helper.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 2576,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
+										"bh_single_quote",
+										"bh_single_quote_center",
+										"bh_single_quote_open",
+										"bh_single_quote_close",
+										"bh_single_quote_content",
 										"bh_angle",
 										"bh_angle_center",
 										"bh_angle_open",
@@ -852,685 +696,6 @@
 										"bh_unmatched_open",
 										"bh_unmatched_close",
 										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "ASCII",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 15,
-							"type": "text"
-						},
-						{
-							"buffer": 2,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/menu_helper.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 5143,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "UTF-8",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 14,
-							"type": "text"
-						},
-						{
-							"buffer": 3,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/password_helper.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 113,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "ASCII",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 13,
-							"type": "text"
-						},
-						{
-							"buffer": 4,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/hooks/auth.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 1371,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "ASCII",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 12,
-							"type": "text"
-						},
-						{
-							"buffer": 5,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/hooks/redirect.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 1683,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "ASCII",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 11,
-							"type": "text"
-						},
-						{
-							"buffer": 6,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/languages/cn/frontend.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 8446,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										20,
-										20
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-											"1":
-											[
-												19,
-												20
-											]
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "UTF-8",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 10,
-							"type": "text"
-						},
-						{
-							"buffer": 7,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/scheduler.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 1915,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										312,
-										312
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-											"1":
-											[
-												311,
-												312
-											]
-										},
-										"icon":
-										{
-											"1":
-											[
-												"Packages/BracketHighlighter/icons/curly_bracket.png",
-												"brackethighlighter.default"
-											]
-										},
-										"open":
-										{
-											"1":
-											[
-												266,
-												267
-											]
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
 										"bh_round",
 										"bh_round_center",
 										"bh_round_open",
@@ -1541,120 +706,191 @@
 										"bh_tag_open",
 										"bh_tag_close",
 										"bh_tag_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
 										"bh_square",
 										"bh_square_center",
 										"bh_square_open",
 										"bh_square_close",
 										"bh_square_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content"
+									],
+									"bracket_highlighter.locations":
+									{
+										"close":
+										{
+											"1":
+											[
+												1809,
+												1810
+											]
+										},
+										"icon":
+										{
+											"1":
+											[
+												"Packages/BracketHighlighter/icons/square_bracket.png",
+												"region.bluish"
+											]
+										},
+										"open":
+										{
+											"1":
+											[
+												337,
+												338
+											]
+										},
+										"unmatched":
+										{
+										}
+									},
+									"bracket_highlighter.regions":
+									[
+										"bh_regex",
+										"bh_regex_center",
+										"bh_regex_open",
+										"bh_regex_close",
+										"bh_regex_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
 										"bh_curly",
 										"bh_curly_center",
 										"bh_curly_open",
 										"bh_curly_close",
-										"bh_curly_content"
+										"bh_curly_content",
+										"bh_double_quote",
+										"bh_double_quote_center",
+										"bh_double_quote_open",
+										"bh_double_quote_close",
+										"bh_double_quote_content",
+										"bh_single_quote",
+										"bh_single_quote_center",
+										"bh_single_quote_open",
+										"bh_single_quote_close",
+										"bh_single_quote_content",
+										"bh_angle",
+										"bh_angle_center",
+										"bh_angle_open",
+										"bh_angle_close",
+										"bh_angle_content",
+										"bh_unmatched",
+										"bh_unmatched_center",
+										"bh_unmatched_open",
+										"bh_unmatched_close",
+										"bh_unmatched_content",
+										"bh_round",
+										"bh_round_center",
+										"bh_round_open",
+										"bh_round_close",
+										"bh_round_content",
+										"bh_tag",
+										"bh_tag_center",
+										"bh_tag_open",
+										"bh_tag_close",
+										"bh_tag_content",
+										"bh_square",
+										"bh_square_center",
+										"bh_square_open",
+										"bh_square_close",
+										"bh_square_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content"
 									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
 									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "UTF-8",
 									"remote_loading": false,
 									"synced": false,
 									"syntax": "Packages/PHP/PHP.sublime-syntax",
 									"translate_tabs_to_spaces": true
 								},
-								"translation.x": -0.0,
-								"translation.y": 1020.0,
+								"translation.x": 0.0,
+								"translation.y": 0.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 1,
 							"type": "text"
 						},
 						{
-							"buffer": 8,
-							"file": "/home/alan/.config/sublime-text-3/Packages/User/Terminal.sublime-settings",
+							"buffer": 1,
+							"file": "/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/live/kefu-service/test/Events.php",
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 459,
+								"buffer_size": 43,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										185,
-										185
+										43,
+										43
 									]
 								],
 								"settings":
 								{
 									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
+									"bracket_highlighter.clone": -1,
+									"bracket_highlighter.clone_locations":
 									{
 										"close":
 										{
-											"1":
-											[
-												185,
-												186
-											]
 										},
 										"icon":
 										{
-											"1":
-											[
-												"Packages/BracketHighlighter/icons/double_quote.png",
-												"brackethighlighter.default"
-											]
 										},
 										"open":
 										{
-											"1":
-											[
-												165,
-												166
-											]
 										},
 										"unmatched":
 										{
 										}
 									},
-									"bracket_highlighter.regions":
+									"bracket_highlighter.clone_regions":
 									[
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
 										"bh_regex",
 										"bh_regex_center",
 										"bh_regex_open",
 										"bh_regex_close",
 										"bh_regex_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
+										"bh_curly",
+										"bh_curly_center",
+										"bh_curly_open",
+										"bh_curly_close",
+										"bh_curly_content",
+										"bh_double_quote",
+										"bh_double_quote_center",
+										"bh_double_quote_open",
+										"bh_double_quote_close",
+										"bh_double_quote_content",
+										"bh_single_quote",
+										"bh_single_quote_center",
+										"bh_single_quote_open",
+										"bh_single_quote_close",
+										"bh_single_quote_content",
+										"bh_angle",
+										"bh_angle_center",
+										"bh_angle_open",
+										"bh_angle_close",
+										"bh_angle_content",
+										"bh_unmatched",
+										"bh_unmatched_center",
+										"bh_unmatched_open",
+										"bh_unmatched_close",
+										"bh_unmatched_content",
 										"bh_round",
 										"bh_round_center",
 										"bh_round_open",
@@ -1665,37 +901,110 @@
 										"bh_tag_open",
 										"bh_tag_close",
 										"bh_tag_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
 										"bh_square",
 										"bh_square_center",
 										"bh_square_open",
 										"bh_square_close",
 										"bh_square_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content"
+									],
+									"bracket_highlighter.locations":
+									{
+										"close":
+										{
+											"1":
+											[
+												40,
+												41
+											]
+										},
+										"icon":
+										{
+											"1":
+											[
+												"Packages/BracketHighlighter/icons/single_quote.png",
+												"region.greenish"
+											]
+										},
+										"open":
+										{
+											"1":
+											[
+												25,
+												26
+											]
+										},
+										"unmatched":
+										{
+										}
+									},
+									"bracket_highlighter.regions":
+									[
+										"bh_regex",
+										"bh_regex_center",
+										"bh_regex_open",
+										"bh_regex_close",
+										"bh_regex_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
 										"bh_curly",
 										"bh_curly_center",
 										"bh_curly_open",
 										"bh_curly_close",
-										"bh_curly_content"
+										"bh_curly_content",
+										"bh_double_quote",
+										"bh_double_quote_center",
+										"bh_double_quote_open",
+										"bh_double_quote_close",
+										"bh_double_quote_content",
+										"bh_single_quote",
+										"bh_single_quote_center",
+										"bh_single_quote_open",
+										"bh_single_quote_close",
+										"bh_single_quote_content",
+										"bh_angle",
+										"bh_angle_center",
+										"bh_angle_open",
+										"bh_angle_close",
+										"bh_angle_content",
+										"bh_unmatched",
+										"bh_unmatched_center",
+										"bh_unmatched_open",
+										"bh_unmatched_close",
+										"bh_unmatched_content",
+										"bh_round",
+										"bh_round_center",
+										"bh_round_open",
+										"bh_round_close",
+										"bh_round_content",
+										"bh_tag",
+										"bh_tag_center",
+										"bh_tag_open",
+										"bh_tag_close",
+										"bh_tag_content",
+										"bh_square",
+										"bh_square_center",
+										"bh_square_open",
+										"bh_square_close",
+										"bh_square_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content"
 									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
 									"incomplete_sync": null,
 									"remote_loading": false,
 									"synced": false,
-									"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+									"syntax": "Packages/PHP/PHP.sublime-syntax",
+									"translate_tabs_to_spaces": true
 								},
 								"translation.x": 0.0,
 								"translation.y": 0.0,
@@ -1705,77 +1014,78 @@
 							"type": "text"
 						},
 						{
-							"buffer": 9,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/helpers/ag_api.php",
+							"buffer": 2,
+							"file": "/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/app/config/gamble.php",
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 522,
+								"buffer_size": 6162,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										444,
-										444
+										884,
+										884
 									]
 								],
 								"settings":
 								{
 									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
+									"bracket_highlighter.clone": -1,
+									"bracket_highlighter.clone_locations":
 									{
 										"close":
 										{
-											"1":
-											[
-												443,
-												444
-											]
 										},
 										"icon":
 										{
-											"1":
-											[
-												"Packages/BracketHighlighter/icons/round_bracket.png",
-												"brackethighlighter.default"
-											]
 										},
 										"open":
 										{
-											"1":
-											[
-												434,
-												435
-											]
 										},
 										"unmatched":
 										{
 										}
 									},
-									"bracket_highlighter.regions":
+									"bracket_highlighter.clone_regions":
 									[
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
 										"bh_regex",
 										"bh_regex_center",
 										"bh_regex_open",
 										"bh_regex_close",
 										"bh_regex_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
+										"bh_curly",
+										"bh_curly_center",
+										"bh_curly_open",
+										"bh_curly_close",
+										"bh_curly_content",
+										"bh_double_quote",
+										"bh_double_quote_center",
+										"bh_double_quote_open",
+										"bh_double_quote_close",
+										"bh_double_quote_content",
+										"bh_single_quote",
+										"bh_single_quote_center",
+										"bh_single_quote_open",
+										"bh_single_quote_close",
+										"bh_single_quote_content",
+										"bh_angle",
+										"bh_angle_center",
+										"bh_angle_open",
+										"bh_angle_close",
+										"bh_angle_content",
+										"bh_unmatched",
+										"bh_unmatched_center",
+										"bh_unmatched_open",
+										"bh_unmatched_close",
+										"bh_unmatched_content",
 										"bh_round",
 										"bh_round_center",
 										"bh_round_open",
@@ -1786,1395 +1096,116 @@
 										"bh_tag_open",
 										"bh_tag_close",
 										"bh_tag_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
 										"bh_square",
 										"bh_square_center",
 										"bh_square_open",
 										"bh_square_close",
 										"bh_square_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content"
+									],
+									"bracket_highlighter.locations":
+									{
+										"close":
+										{
+											"1":
+											[
+												1479,
+												1480
+											]
+										},
+										"icon":
+										{
+											"1":
+											[
+												"Packages/BracketHighlighter/icons/square_bracket.png",
+												"region.bluish"
+											]
+										},
+										"open":
+										{
+											"1":
+											[
+												791,
+												792
+											]
+										},
+										"unmatched":
+										{
+										}
+									},
+									"bracket_highlighter.regions":
+									[
+										"bh_regex",
+										"bh_regex_center",
+										"bh_regex_open",
+										"bh_regex_close",
+										"bh_regex_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
 										"bh_curly",
 										"bh_curly_center",
 										"bh_curly_open",
 										"bh_curly_close",
-										"bh_curly_content"
+										"bh_curly_content",
+										"bh_double_quote",
+										"bh_double_quote_center",
+										"bh_double_quote_open",
+										"bh_double_quote_close",
+										"bh_double_quote_content",
+										"bh_single_quote",
+										"bh_single_quote_center",
+										"bh_single_quote_open",
+										"bh_single_quote_close",
+										"bh_single_quote_content",
+										"bh_angle",
+										"bh_angle_center",
+										"bh_angle_open",
+										"bh_angle_close",
+										"bh_angle_content",
+										"bh_unmatched",
+										"bh_unmatched_center",
+										"bh_unmatched_open",
+										"bh_unmatched_close",
+										"bh_unmatched_content",
+										"bh_round",
+										"bh_round_center",
+										"bh_round_open",
+										"bh_round_close",
+										"bh_round_content",
+										"bh_tag",
+										"bh_tag_center",
+										"bh_tag_open",
+										"bh_tag_close",
+										"bh_tag_content",
+										"bh_square",
+										"bh_square_center",
+										"bh_square_open",
+										"bh_square_close",
+										"bh_square_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content"
 									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
 									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "ASCII",
 									"remote_loading": false,
 									"synced": false,
 									"syntax": "Packages/PHP/PHP.sublime-syntax",
 									"translate_tabs_to_spaces": true
 								},
 								"translation.x": 0.0,
-								"translation.y": 0.0,
+								"translation.y": 126.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 2,
-							"type": "text"
-						},
-						{
-							"buffer": 10,
-							"file": "/usr/share/gnome-shell/theme/gnome-classic.css",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 45796,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										3414,
-										3414
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-											"1":
-											[
-												3445,
-												3446
-											]
-										},
-										"icon":
-										{
-											"1":
-											[
-												"Packages/BracketHighlighter/icons/curly_bracket.png",
-												"brackethighlighter.default"
-											]
-										},
-										"open":
-										{
-											"1":
-											[
-												3190,
-												3191
-											]
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"origin_encoding": "ASCII",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/CSS/CSS.sublime-syntax"
-								},
-								"translation.x": 0.0,
-								"translation.y": 2071.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 3,
-							"type": "text"
-						},
-						{
-							"buffer": 11,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/logs/sova_game_record.log",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 137,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "ASCII",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/Text/Plain text.tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 9,
-							"type": "text"
-						},
-						{
-							"buffer": 12,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/db_backup.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 3401,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "UTF-8",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 8,
-							"type": "text"
-						},
-						{
-							"buffer": 13,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/email_queue.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 3254,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "ASCII",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 7,
-							"type": "text"
-						},
-						{
-							"buffer": 14,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/restore_point.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 2098,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "UTF-8",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 6,
-							"type": "text"
-						},
-						{
-							"buffer": 15,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/sova_game_record.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 3608,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "ASCII",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 5,
-							"type": "text"
-						},
-						{
-							"buffer": 16,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/sova_game_report.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 1805,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "UTF-8",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 660.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 4,
-							"type": "text"
-						},
-						{
-							"buffer": 17,
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 16,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										16,
-										16
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"default_dir": "/run/media/alan/64GUSB/dahan-workspace",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"sidebar_instant_search_paths":
-									[
-										"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt"
-									],
-									"syntax": "Packages/SideBarEnhancements/SideBar Results.hidden-tmLanguage",
-									"word_wrap": false
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 21,
-							"type": "text"
-						},
-						{
-							"buffer": 18,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Controllers/IndexController.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 1187,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										1185,
-										1185
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-											"1":
-											[
-												1185,
-												1186
-											]
-										},
-										"icon":
-										{
-											"1":
-											[
-												"Packages/BracketHighlighter/icons/curly_bracket.png",
-												"brackethighlighter.default"
-											]
-										},
-										"open":
-										{
-											"1":
-											[
-												62,
-												63
-											]
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"open_with_edit": true,
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 120.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 17,
-							"type": "text"
-						},
-						{
-							"buffer": 19,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Views/index.twig",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 0,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"open_with_edit": true,
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 18,
-							"type": "text"
-						},
-						{
-							"buffer": 20,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Views/play.twig",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 0,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-										},
-										"icon":
-										{
-										},
-										"open":
-										{
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"open_with_edit": true,
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP-Twig/Syntaxes/HTML (Twig).tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 20,
-							"type": "text"
-						},
-						{
-							"buffer": 21,
-							"file": "/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Ag/AgModule.php",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 1539,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										1098,
-										1098
-									]
-								],
-								"settings":
-								{
-									"bracket_highlighter.busy": false,
-									"bracket_highlighter.locations":
-									{
-										"close":
-										{
-											"1":
-											[
-												1535,
-												1536
-											]
-										},
-										"icon":
-										{
-											"1":
-											[
-												"Packages/BracketHighlighter/icons/curly_bracket.png",
-												"brackethighlighter.default"
-											]
-										},
-										"open":
-										{
-											"1":
-											[
-												223,
-												224
-											]
-										},
-										"unmatched":
-										{
-										}
-									},
-									"bracket_highlighter.regions":
-									[
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
-										"bh_angle",
-										"bh_angle_center",
-										"bh_angle_open",
-										"bh_angle_close",
-										"bh_angle_content",
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
-										"bh_regex",
-										"bh_regex_center",
-										"bh_regex_open",
-										"bh_regex_close",
-										"bh_regex_content",
-										"bh_single_quote",
-										"bh_single_quote_center",
-										"bh_single_quote_open",
-										"bh_single_quote_close",
-										"bh_single_quote_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
-										"bh_tag",
-										"bh_tag_center",
-										"bh_tag_open",
-										"bh_tag_close",
-										"bh_tag_content",
-										"bh_square",
-										"bh_square_center",
-										"bh_square_open",
-										"bh_square_close",
-										"bh_square_content"
-									],
-									"color_scheme": "Packages/User/Color Highlighter/themes/Afterglow-monokai.tmTheme",
-									"incomplete_sync": null,
-									"is_init_dirty_state": false,
-									"origin_encoding": "ASCII",
-									"remote_loading": false,
-									"synced": false,
-									"syntax": "Packages/PHP/PHP.sublime-syntax",
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": -0.0,
-								"translation.y": 360.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 19,
 							"type": "text"
 						}
 					]
@@ -3182,11 +1213,11 @@
 			],
 			"incremental_find":
 			{
-				"height": 28.0
+				"height": 29.0
 			},
 			"input":
 			{
-				"height": 36.0
+				"height": 37.0
 			},
 			"layout":
 			{
@@ -3220,11 +1251,11 @@
 				"height": 116.0
 			},
 			"pinned_build_system": "",
-			"position": "0,1,0,0,0,0,0,0,0,1280,1024",
+			"position": "0,1,0,0,0,0,0,0,0,5760,1080",
 			"project": "",
 			"replace":
 			{
-				"height": 72.0
+				"height": 54.0
 			},
 			"save_all_on_build": true,
 			"select_file":
@@ -3262,7 +1293,7 @@
 			"show_open_files": true,
 			"show_tabs": true,
 			"side_bar_visible": true,
-			"side_bar_width": 312.0,
+			"side_bar_width": 388.0,
 			"status_bar_visible": true,
 			"template_settings":
 			{

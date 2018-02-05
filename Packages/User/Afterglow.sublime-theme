@@ -1,0 +1,16 @@
+[
+    {
+        "class": "sidebar_label",
+        "color": [188, 188, 188],
+        "shadow_color": [0, 0, 0],
+        "shadow_offset": [0, 01],
+        "font.face": "Inconsolata",
+        "font.bold": false,
+        "font.size": 18
+    },
+    {
+        "class": "sidebar_label",
+        "parents": [{"class": "tree_row","attributes": ["hover"]}],
+        // "color": [255,255,255]
+    },
+]

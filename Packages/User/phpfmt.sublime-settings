@@ -7,7 +7,7 @@
 	[
 		"MergeElseIf"
 	],
-	"php_bin": "/usr/bin/php71",
+	"php_bin": "/usr/bin/php",
 	"psr2": true,
 	"version": 3
 }
