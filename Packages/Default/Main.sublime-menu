@@ -154,8 +154,8 @@
                 ]
             },
             { "caption": "-", "id": "clipboard" },
-            { "command": "copy", "caption": "複製(C)", "mnemonic": "C" },
             { "command": "cut", "caption": "剪下(T)", "mnemonic": "T" },
+            { "command": "copy", "caption": "複製(C)", "mnemonic": "C" },
             { "command": "paste", "caption": "貼上(P)", "mnemonic": "P" },
             { "command": "paste_and_indent", "caption": "貼上並自動縮排(I)", "mnemonic": "I" },
             { "command": "paste_from_history", "caption": "從歷史記錄中貼上" },
@@ -189,6 +189,9 @@
                 "id": "text",
                 "children":
                 [
+                    { "command": "revert_modification" },
+                    { "command": "toggle_inline_diff" },
+                    { "caption": "-" },
                     { "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line Before.sublime-macro"}, "caption": "在此前插入行" },
                     { "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"}, "caption": "在此後插入行" },
                     { "caption": "-" },
@@ -627,8 +630,12 @@
             { "command": "show_overlay", "args": {"overlay": "goto", "text": "@"}, "caption": "前往至符號處…" },
             { "command": "goto_symbol_in_project", "caption": "前往至專案符號處…" },
             { "command": "goto_definition", "caption": "前往至定義處…" },
+            { "command": "goto_reference", "caption": "前往至引用處…" },
             // { "command": "show_overlay", "args": {"overlay": "goto", "text": "#"}, "caption": "前往至到詞組…" },
             { "command": "show_overlay", "args": {"overlay": "goto", "text": ":"}, "caption": "前往到行…" },
+            { "caption": "-" },
+            { "command": "next_modification", "caption": "Next Modification" },
+            { "command": "prev_modification", "caption": "Previous Modification" },
             { "caption": "-" },
             { "command": "jump_back", "caption": "往後跳" },
             { "command": "jump_forward", "caption": "往前跳" },
@@ -802,7 +809,7 @@
                     { "command": "open_recent_project_or_workspace", "args": {"index": 6 } },
                     { "command": "open_recent_project_or_workspace", "args": {"index": 7 } },
                     { "caption": "-" },
-                    { "command": "clear_recent_workspaces", "caption": "清除記錄" }
+                    { "command": "clear_recent_projects_and_workspaces", "caption": "清除記錄" }
                 ]
             },
             { "caption": "-" },
@@ -880,12 +887,13 @@
         "children":
         [
             { "command": "open_url", "args": {"url": "http://www.sublimetext.com/docs/3/"}, "caption": "線上說明" },
-            { "command": "open_url", "args": {"url": "http://twitter.com/sublimehq"}, "caption": "官方 Twitter" },
-            { "command": "open_url", "args": {"url": "http://i.rexdf.org"}, "caption": "中文化 by Rexdf" },
+            { "command": "open_url", "args": {"url": "https://twitter.com/sublimehq"}, "caption": "官方 Twitter" },
+            { "command": "open_url", "args": {"url": "https://i.rexdf.org"}, "caption": "中文化 by Rexdf" },
             { "caption": "-" },
             { "command": "show_progress_window", "caption": "索引狀態…" },
             { "caption": "-" },
             { "command": "purchase_license", "caption": "購買授權" },
+            { "command": "upgrade_license", "caption": "升級授權" },
             { "command": "show_license_window", "caption": "輸入授權碼" },
             { "command": "remove_license", "caption": "移除授權"},
             { "caption": "-" },

@@ -2,11 +2,10 @@
 Backrefs Re parser.
 
 Licensed under MIT
-Copyright (c) 2011 - 2018 Isaac Muse <isaacmuse@gmail.com>
+Copyright (c) 2011 - 2020 Isaac Muse <isaacmuse@gmail.com>
 """
-from __future__ import unicode_literals
-import sys as _sys
 import re as _re
+import copyreg as _copyreg
 from . import util as _util
 import sre_parse as _sre_parse
 import unicodedata as _unicodedata
@@ -16,9 +15,6 @@ __all__ = ("ReplaceTemplate",)
 
 _SCOPED_FLAG_SUPPORT = _util.PY36
 
-_MAXUNICODE = _sys.maxunicode
-_NARROW = _sys.maxunicode == 0xFFFF
-
 _ASCII_LETTERS = frozenset(
     (
         'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
@@ -27,23 +23,37 @@ _ASCII_LETTERS = frozenset(
         'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
     )
 )
+_DIGIT = frozenset(('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'))
 _OCTAL = frozenset(('0', '1', '2', '3', '4', '5', '6', '7'))
 _HEX = frozenset(('a', 'b', 'c', 'd', 'e', 'f', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'))
-_WORD = _ASCII_LETTERS | frozenset(('_',))
+_LETTERS_UNDERSCORE = _ASCII_LETTERS | frozenset(('_',))
+_WORD = _LETTERS_UNDERSCORE | _DIGIT
 _STANDARD_ESCAPES = frozenset(('a', 'b', 'f', 'n', 'r', 't', 'v'))
-_DIGIT = frozenset(('0', '1', '2', '3', '4', '5', '6', '7', '8', '9'))
 _CURLY_BRACKETS = frozenset(('{', '}'))
 _PROPERTY_STRIP = frozenset((' ', '-', '_'))
 _PROPERTY = _WORD | _DIGIT | _PROPERTY_STRIP
-if _util.PY3:
-    _GLOBAL_FLAGS = frozenset(('a', 'u', 'L'))
-else:
-    _GLOBAL_FLAGS = frozenset(('u', 'L'))
+_GLOBAL_FLAGS = frozenset(('a', 'u', 'L'))
 _SCOPED_FLAGS = frozenset(('i', 'm', 's', 'u', 'x'))
+
+_CURLY_BRACKETS_ORD = frozenset((0x7b, 0x7d))
 
 # Case upper or lower
 _UPPER = 1
 _LOWER = 2
+
+# Format Constants
+_BACK_SLASH_TRANSLATION = {
+    "\\a": '\a',
+    "\\b": '\b',
+    "\\f": '\f',
+    "\\r": '\r',
+    "\\t": '\t',
+    "\\n": '\n',
+    "\\v": '\v',
+    "\\\\": '\\'
+}
+
+_FMT_CONV_TYPE = ('a', 'r', 's')
 
 
 class LoopException(Exception):
@@ -57,32 +67,39 @@ class GlobalRetryException(Exception):
 class _SearchParser(object):
     """Search Template."""
 
-    _new_refs = ("e", "l", "L", "c", "C", "p", "P", "N", "Q", "E", "<", ">")
+    _new_refs = ("c", "C", "e", "E", "h", "l", "L", "m", "M", "N", "p", "P", "Q", "R", "X")
     _re_escape = r"\x1b"
     _re_start_wb = r"\b(?=\w)"
     _re_end_wb = r"\b(?<=\w)"
+    _line_break = r'(?:\r\n|(?!\r\n)[\n\v\f\r\x85\u2028\u2029])'
+    _bytes_line_break = r'(?:\r\n|(?!\r\n)[\n\v\f\r\x85])'
+    _grapheme_cluster = r'(?:%s%s*(?!%s))'
 
     def __init__(self, search, re_verbose=False, re_unicode=None):
         """Initialize."""
 
-        if isinstance(search, _util.binary_type):
-            self.binary = True
+        if isinstance(search, bytes):
+            self.is_bytes = True
         else:
-            self.binary = False
+            self.is_bytes = False
 
+        if self.is_bytes:
+            self._re_line_break = self._bytes_line_break
+        else:
+            self._re_line_break = self._line_break
         self.search = search
         self.re_verbose = re_verbose
         self.re_unicode = re_unicode
 
-    def process_quotes(self, string):
+    def process_quotes(self, text):
         """Process quotes."""
 
         escaped = False
         in_quotes = False
         current = []
         quoted = []
-        i = _util.StringIter(string)
-        iter(i)
+        i = _util.StringIter(text)
+
         for t in i:
             if not escaped and t == "\\":
                 escaped = True
@@ -144,12 +161,12 @@ class _SearchParser(object):
         """Analyze flags."""
 
         global_retry = False
-        if _util.PY3 and ('a' in text or 'L' in text) and self.unicode:
+        if ('a' in text or 'L' in text) and self.unicode:
             self.unicode = False
             if not _SCOPED_FLAG_SUPPORT or not scoped:
                 self.temp_global_flag_swap["unicode"] = True
                 global_retry = True
-        elif 'u' in text and not self.unicode and not self.binary:
+        elif 'u' in text and not self.unicode and not self.is_bytes:
             self.unicode = True
             if not _SCOPED_FLAG_SUPPORT or not scoped:
                 self.temp_global_flag_swap["unicode"] = True
@@ -164,7 +181,7 @@ class _SearchParser(object):
         if global_retry:
             raise GlobalRetryException('Global Retry')
 
-    def get_unicode_property(self, i):
+    def get_unicode_property(self, i, brackets=False):
         """Get Unicode property."""
 
         index = i.index
@@ -174,35 +191,58 @@ class _SearchParser(object):
             c = next(i)
             if c.upper() in _ASCII_LETTERS:
                 prop.append(c)
-            elif c != '{':
+            elif not brackets and c != '{' or brackets and c != ':':
                 raise SyntaxError("Unicode property missing '{' at %d!" % (i.index - 1))
             else:
                 c = next(i)
                 if c == '^':
                     prop.append(c)
                     c = next(i)
+
                 while c not in (':', '=', '}'):
                     if c not in _PROPERTY:
                         raise SyntaxError('Invalid Unicode property character at %d!' % (i.index - 1))
                     if c not in _PROPERTY_STRIP:
                         prop.append(c)
                     c = next(i)
+
                 if c in (':', '='):
-                    c = next(i)
-                    while c != '}':
-                        if c not in _PROPERTY:
-                            raise SyntaxError('Invalid Unicode property character at %d!' % (i.index - 1))
-                        if c not in _PROPERTY_STRIP:
-                            value.append(c)
+                    skip = False
+                    if brackets:
+                        is_colon = c == ':'
                         c = next(i)
-                    if not value:
-                        raise SyntaxError('Invalid Unicode property!')
+                        if is_colon and c == ']':
+                            # That's the end of the property
+                            skip = True
+                        end = ':'
+                    else:
+                        c = next(i)
+                        end = '}'
+
+                    # Get the property value
+                    if not skip:
+                        while c != end:
+                            if c not in _PROPERTY:
+                                raise SyntaxError('Invalid Unicode property character at %d!' % (i.index - 1))
+                            if c not in _PROPERTY_STRIP:
+                                value.append(c)
+                            c = next(i)
+                        if brackets and c == ':':
+                            c = next(i)
+                            if c != ']':
+                                raise SyntaxError('Invalid Unicode property character at %d!' % (i.index - 1))
+                        if not value:
+                            raise SyntaxError('Invalid Unicode property!')
+
         except StopIteration:
-            raise SyntaxError("Missing or unmatched '{' at %d!" % index)
+            if brackets:
+                raise SyntaxError("Missing or unmatched ':]' at %d!" % index)
+            else:
+                raise SyntaxError("Missing or unmatched '{' at %d!" % index)
 
         return ''.join(prop).lower(), ''.join(value).lower()
 
-    def get_named_property(self, i):
+    def get_named_unicode(self, i):
         """Get Unicode name."""
 
         index = i.index
@@ -212,8 +252,6 @@ class _SearchParser(object):
                 raise ValueError("Named Unicode missing '{' %d!" % (i.index - 1))
             c = next(i)
             while c != '}':
-                if c not in _WORD and c != ' ':
-                    raise ValueError('Invalid named Unicode character %d!' % (i.index - 1))
                 value.append(c)
                 c = next(i)
         except Exception:
@@ -226,21 +264,22 @@ class _SearchParser(object):
 
         current = []
 
-        if not in_group and t == "<":
+        if not in_group and t == "m":
             current.append(self._re_start_wb)
-        elif not in_group and t == ">":
+        elif not in_group and t == "M":
             current.append(self._re_end_wb)
+        elif not in_group and t == "R":
+            current.append(self._re_line_break)
+        elif not in_group and t == "X":
+            no_mark = self.unicode_props("^m", None, in_group=False)[0]
+            mark = self.unicode_props("m", None, in_group=False)[0]
+            current.extend(self._grapheme_cluster % (no_mark, mark, mark))
         elif t == "e":
             current.append(self._re_escape)
-        elif t == "l":
-            current.extend(self.letter_case_props(_LOWER, in_group))
-        elif t == "L":
-            current.extend(self.letter_case_props(_LOWER, in_group, negate=True))
-        elif t == "c":
-            current.extend(self.letter_case_props(_UPPER, in_group))
-        elif t == "C":
-            current.extend(self.letter_case_props(_UPPER, in_group, negate=True))
-
+        elif t == "h":
+            current.extend(self.unicode_props('blank', None, in_group=in_group))
+            if in_group:
+                self.found_property = True
         elif t == 'p':
             prop = self.get_unicode_property(i)
             current.extend(self.unicode_props(prop[0], prop[1], in_group=in_group))
@@ -252,10 +291,10 @@ class _SearchParser(object):
             if in_group:
                 self.found_property = True
         elif t == "N":
-            text = self.get_named_property(i)
+            text = self.get_named_unicode(i)
             current.extend(self.unicode_name(text, in_group))
             if in_group:
-                self.found_property = True
+                self.found_named_unicode = True
         else:
             current.extend(["\\", t])
         return current
@@ -373,33 +412,6 @@ class _SearchParser(object):
             current.append(t)
         return current
 
-    def get_posix(self, i):
-        """Get POSIX."""
-
-        index = i.index
-        value = []
-        try:
-            c = next(i)
-            if c != ':':
-                raise ValueError('Not a valid property!')
-            else:
-                c = next(i)
-                if c == '^':
-                    value.append(c)
-                    c = next(i)
-                while c != ':':
-                    if c not in _PROPERTY:
-                        raise ValueError('Not a valid property!')
-                    if c not in _PROPERTY_STRIP:
-                        value.append(c)
-                    c = next(i)
-                if next(i) != ']' or not value:
-                    raise ValueError('Not a valid property!')
-        except Exception:
-            i.rewind(i.index - index)
-            value = []
-        return ''.join(value).lower() if value else None
-
     def char_groups(self, t, i):
         """Handle character groups."""
 
@@ -408,24 +420,50 @@ class _SearchParser(object):
         found = False
         escaped = False
         first = None
+        found_property = False
         self.found_property = False
+        self.found_named_unicode = False
 
         try:
             while True:
+                # Prevent POSIX/Unicode class from being part of a range.
+                if self.found_property and t == '-':
+                    current.append(_re.escape(t))
+                    pos += 1
+                    t = next(i)
+                    self.found_property = False
+                    continue
+                else:
+                    self.found_property = False
+
                 if not escaped and t == "\\":
                     escaped = True
                 elif escaped:
                     escaped = False
+                    idx = len(current) - 1
                     current.extend(self.reference(t, i, True))
+                    if self.found_property:
+                        # Prevent Unicode class from being part of a range.
+                        if idx >= 0 and current[idx] == '-':
+                            current[idx] = _re.escape('-')
+                        found_property = True
                 elif t == "[" and not found:
                     found = True
                     first = pos
                     current.append(t)
                 elif t == "[":
-                    posix = self.get_posix(i)
-                    if posix:
-                        current.extend(self.posix_props(posix, in_group=True))
-                        self.found_property = True
+                    index = i.index
+                    try:
+                        prop = self.get_unicode_property(i, True)
+                    except Exception:
+                        prop = None
+                        i.rewind(i.index - index)
+                    if prop is not None:
+                        value = self.unicode_props(prop[0], prop[1], in_group=True)
+                        if current[-1] == '-':
+                            current[-1] = _re.escape('-')
+                        current.extend(value)
+                        found_property = True
                         pos = i.index - 2
                     else:
                         current.append(t)
@@ -450,14 +488,14 @@ class _SearchParser(object):
         # This will occur when a property's values exceed
         # either the Unicode char limit on a narrow system,
         # or the ASCII limit in a byte string pattern.
-        if self.found_property:
+        if found_property or self.found_named_unicode:
             value = "".join(current)
             if value == '[]':
-                # We specified some properities, but they are all
+                # We specified some properties, but they are all
                 # out of reach.  Therefore we can match nothing.
-                current = ['[^%s]' % ('\x00-\xff' if self.binary else _uniprops.UNICODE_RANGE)]
+                current = ['[^%s]' % (_uniprops.ASCII_RANGE if self.is_bytes else _uniprops.UNICODE_RANGE)]
             elif value == '[^]':
-                current = ['[%s]' % ('\x00-\xff' if self.binary else _uniprops.UNICODE_RANGE)]
+                current = ['[%s]' % (_uniprops.ASCII_RANGE if self.is_bytes else _uniprops.UNICODE_RANGE)]
             else:
                 current = [value]
 
@@ -484,43 +522,20 @@ class _SearchParser(object):
             current.append(t)
         return current
 
-    def posix_props(self, prop, in_group=False):
-        """
-        Insert POSIX properties.
-
-        Posix style properties are not as forgiving
-        as Unicode properties.  Case does matter,
-        and whitespace and '-' and '_' will not be tolerated.
-        """
-
-        try:
-            if self.binary or not self.unicode:
-                pattern = _uniprops.get_posix_property(
-                    prop, (_uniprops.POSIX_BINARY if self.binary else _uniprops.POSIX)
-                )
-            else:
-                pattern = _uniprops.get_posix_property(prop, _uniprops.POSIX_UNICODE)
-        except Exception:
-            raise ValueError('Invalid POSIX property!')
-        if not in_group and not pattern:  # pragma: no cover
-            pattern = '^%s' % ('\x00-\xff' if self.binary else _uniprops.UNICODE_RANGE)
-
-        return [pattern]
-
     def unicode_name(self, name, in_group=False):
         """Insert Unicode value by its name."""
 
         value = ord(_unicodedata.lookup(name))
-        if (self.binary and value > 0xFF) or (not self.binary and _NARROW and value > _MAXUNICODE):
+        if (self.is_bytes and value > 0xFF):
             value = ""
         if not in_group and value == "":
-            return '[^%s]' % ('\x00-\xff' if self.binary else _uniprops.UNICODE_RANGE)
+            return '[^%s]' % (_uniprops.ASCII_RANGE if self.is_bytes else _uniprops.UNICODE_RANGE)
         elif value == "":
             return value
         else:
-            return ['\\%03o' % value if value <= 0xFF else _util.uchr(value)]
+            return ['\\%03o' % value if value <= 0xFF else chr(value)]
 
-    def unicode_props(self, props, value, in_group=False, negate=False):
+    def unicode_props(self, props, prop_value, in_group=False, negate=False):
         """
         Insert Unicode properties.
 
@@ -528,52 +543,29 @@ class _SearchParser(object):
         Case doesn't matter and `[ -_]` will be stripped out.
         """
 
-        # 'GC = Some_Unpredictable-Category Name' -> 'gc=someunpredictablecategoryname'
-        category = None
-
-        # \p{^negated} Strip off the caret after evaluation.
         if props.startswith("^"):
-            negate = not negate
-        if props.startswith("^"):
-            props = props[1:]
+            if negate:
+                props = props[1:]
+        elif negate:
+            props = '^' + props
+        if not prop_value and prop_value is not None:
+            prop_value = None
 
-        # Get the property and value.
-        # If a property is present and not block,
-        # we can assume GC as that is all we support.
-        # If we are wrong it will fail.
-        if value:
-            if _uniprops.is_enum(props):
-                category = props
-                props = value
-            elif value in ('y', 'yes', 't', 'true'):
-                category = 'binary'
-            elif value in ('n', 'no', 'f', 'false'):
-                category = 'binary'
-                negate = not negate
-            else:
-                raise ValueError('Invalid Unicode property!')
+        if self.is_bytes:
+            mode = _uniprops.MODE_ASCII
+        elif not self.unicode:
+            mode = _uniprops.MODE_NORMAL
+        else:
+            mode = _uniprops.MODE_UNICODE
 
-        v = _uniprops.get_unicode_property(("^" if negate else "") + props, category, self.binary)
+        v = _uniprops.get_unicode_property(props, prop_value, mode)
         if not in_group:
             if not v:
-                v = '^%s' % ('\x00-\xff' if self.binary else _uniprops.UNICODE_RANGE)
+                v = '^%s' % (_uniprops.ASCII_RANGE if self.is_bytes else _uniprops.UNICODE_RANGE)
             v = "[%s]" % v
         properties = [v]
 
         return properties
-
-    def letter_case_props(self, case, in_group, negate=False):
-        """Insert letter (ASCII or Unicode) case properties."""
-
-        # Use traditional ASCII upper/lower case unless:
-        #    1. The strings fed in are not binary
-        #    2. And the the unicode flag was used
-        if not in_group:
-            v = self.posix_props(("^" if negate else "") + ("upper" if case == _UPPER else "lower"), in_group=in_group)
-            v[0] = "[%s]" % v[0]
-        else:
-            v = self.posix_props(("^" if negate else "") + ("upper" if case == _UPPER else "lower"), in_group=in_group)
-        return v
 
     def main_group(self, i):
         """The main group: group 0."""
@@ -600,18 +592,14 @@ class _SearchParser(object):
             "unicode": False,
             "verbose": False
         }
-        if _util.PY3:
-            self.ascii = self.re_unicode is not None and not self.re_unicode
-        else:
-            self.ascii = False
-        if _util.PY3 and not self.unicode and not self.ascii:
+        self.ascii = self.re_unicode is not None and not self.re_unicode
+        if not self.unicode and not self.ascii:
             self.unicode = True
 
         new_pattern = []
-        string = self.process_quotes(self.search.decode('latin-1') if self.binary else self.search)
+        text = self.process_quotes(self.search.decode('latin-1') if self.is_bytes else self.search)
 
-        i = _util.StringIter(string)
-        iter(i)
+        i = _util.StringIter(text)
 
         retry = True
         while retry:
@@ -638,7 +626,7 @@ class _SearchParser(object):
                 i.rewind(i.index)
                 retry = True
 
-        return "".join(new_pattern).encode('latin-1') if self.binary else "".join(new_pattern)
+        return "".join(new_pattern).encode('latin-1') if self.is_bytes else "".join(new_pattern)
 
 
 class _ReplaceParser(object):
@@ -658,65 +646,172 @@ class _ReplaceParser(object):
         self.auto = False
         self.auto_index = 0
 
+    def parse_format_index(self, text):
+        """Parse format index."""
+
+        base = 10
+        prefix = text[1:3] if text[0] == "-" else text[:2]
+        if prefix[0:1] == "0":
+            char = prefix[-1]
+            if char == "b":
+                base = 2
+            elif char == "o":
+                base = 8
+            elif char == "x":
+                base = 16
+        try:
+            text = int(text, base)
+        except Exception:
+            pass
+        return text
+
     def get_format(self, c, i):
         """Get format group."""
 
         index = i.index
-
+        field = ''
         value = []
+
         try:
             if c == '}':
-                value.append('')
+                value.append((_util.FMT_FIELD, ''))
             else:
-                if c in _WORD:
+                # Field
+                if c in _LETTERS_UNDERSCORE:
                     # Handle name
                     value.append(c)
-                    c = next(i)
-                    while c not in ('}', '['):
-                        if c not in _WORD and c not in _DIGIT:
-                            raise SyntaxError('Invalid format character at %d!' % (i.index - 1))
+                    c = self.format_next(i)
+                    while c in _WORD:
                         value.append(c)
-                        c = next(i)
+                        c = self.format_next(i)
                 elif c in _DIGIT:
                     # Handle group number
                     value.append(c)
-                    c = next(i)
-                    while c not in ('}', '['):
-                        if c not in _DIGIT:
-                            raise SyntaxError('Invalid format character at %d' % (i.index - 1))
+                    c = self.format_next(i)
+                    while c in _DIGIT:
                         value.append(c)
-                        c = next(i)
-                if c == '[':
-                    sindex = i.index - 1
-                    value.append(c)
-                    c = next(i)
-                    while c not in (']', '}'):
-                        value.append(c)
-                        c = next(i)
-                    if c != ']':
-                        raise SyntaxError("Unmatched '[' at %d!" % (sindex - 1))
-                    value.append(c)
-                    c = next(i)
+                        c = self.format_next(i)
+
+                # Try and covert to integer index
+                field = ''.join(value).strip()
+                try:
+                    value = [(_util.FMT_FIELD, str(int(field, 10)))]
+                except ValueError:
+                    value = [(_util.FMT_FIELD, field)]
+                    pass
+
+                # Attributes and indexes
+                while c in ('[', '.'):
+                    if c == '[':
+                        findex = []
+                        sindex = i.index - 1
+                        c = self.format_next(i)
+                        try:
+                            while c != ']':
+                                findex.append(c)
+                                c = self.format_next(i)
+                        except StopIteration:
+                            raise SyntaxError("Unmatched '[' at %d" % (sindex - 1))
+                        idx = self.parse_format_index(''.join(findex))
+                        if isinstance(idx, int):
+                            value.append((_util.FMT_INDEX, idx))
+                        else:
+                            value.append((_util.FMT_INDEX, idx))
+                        c = self.format_next(i)
+                    else:
+                        findex = []
+                        c = self.format_next(i)
+                        while c in _WORD:
+                            findex.append(c)
+                            c = self.format_next(i)
+                        value.append((_util.FMT_ATTR, ''.join(findex)))
+
+                # Conversion
+                if c == '!':
+                    c = self.format_next(i)
+                    if c not in _FMT_CONV_TYPE:
+                        raise SyntaxError("Invalid conversion type at %d!" % (i.index - 1))
+                    value.append((_util.FMT_CONV, c))
+                    c = self.format_next(i)
+
+                # Format spec
+                if c == ':':
+                    fill = None
+                    width = []
+                    align = None
+                    convert = None
+                    c = self.format_next(i)
+
+                    if c in ('<', '>', '^'):
+                        # Get fill and alignment
+                        align = c
+                        c = self.format_next(i)
+                        if c in ('<', '>', '^'):
+                            fill = align
+                            align = c
+                            c = self.format_next(i)
+                    elif c in _DIGIT:
+                        # Get Width
+                        fill = c
+                        c = self.format_next(i)
+                        if c in ('<', '>', '^'):
+                            align = c
+                            c = self.format_next(i)
+                        else:
+                            width.append(fill)
+                            fill = None
+                    else:
+                        fill = c
+                        c = self.format_next(i)
+                        if fill == 's' and c == '}':
+                            convert = fill
+                            fill = None
+                        if fill is not None:
+                            if c not in ('<', '>', '^'):
+                                raise SyntaxError('Invalid format spec char at %d!' % (i.index - 1))
+                            align = c
+                            c = self.format_next(i)
+
+                    while c in _DIGIT:
+                        width.append(c)
+                        c = self.format_next(i)
+
+                    if not align and len(width) and width[0] == '0':
+                        raise ValueError("'=' alignment is not supported!")
+                    if align and not fill and len(width) and width[0] == '0':
+                        fill = '0'
+
+                    if c == 's':
+                        convert = c
+                        c = self.format_next(i)
+
+                    if fill and self.is_bytes:
+                        fill = fill.encode('latin-1')
+                    elif not fill:
+                        fill = b' ' if self.is_bytes else ' '
+
+                    value.append((_util.FMT_SPEC, (fill, align, (int(''.join(width)) if width else 0), convert)))
+
             if c != '}':
-                raise SyntaxError("Unmatched '{' at %d!" % (index - 1))
+                raise SyntaxError("Unmatched '{' at %d" % (index - 1))
         except StopIteration:
             raise SyntaxError("Unmatched '{' at %d!" % (index - 1))
 
-        return ''.join(value)
+        return field, value
 
     def handle_format(self, t, i):
         """Handle format."""
 
         if t == '{':
-            t = next(i)
+            t = self.format_next(i)
             if t == '{':
                 self.get_single_stack()
                 self.result.append(t)
             else:
-                text = self.get_format(t, i)
-                self.handle_format_group(text.strip())
+                field, text = self.get_format(t, i)
+                self.handle_format_group(field, text)
         else:
-            t = next(i)
+            t = self.format_next(i)
             if t == '}':
                 self.get_single_stack()
                 self.result.append(t)
@@ -748,30 +843,32 @@ class _ReplaceParser(object):
             pass
 
         octal_count = len(value)
-        if not (zero_count and octal_count < 3) and octal_count != 3:
+        if not (self.use_format and octal_count) and not (zero_count and octal_count < 3) and octal_count != 3:
             i.rewind(i.index - index)
             value = []
 
         return ''.join(value) if value else None
 
-    def parse_octal(self, text):
+    def parse_octal(self, text, i):
         """Parse octal value."""
 
         value = int(text, 8)
-        if value > 0xFF and self.binary:
-            # Re fails on octal greater than 0o377 or 0xFF
+        if value > 0xFF and self.is_bytes:
+            # Re fails on octal greater than `0o377` or `0xFF`
             raise ValueError("octal escape value outside of range 0-0o377!")
         else:
             single = self.get_single_stack()
             if self.span_stack:
-                text = self.convert_case(_util.uchr(value), self.span_stack[-1])
+                text = self.convert_case(chr(value), self.span_stack[-1])
                 value = ord(self.convert_case(text, single)) if single is not None else ord(text)
             elif single:
-                value = ord(self.convert_case(_util.uchr(value), single))
-            if value <= 0xFF:
+                value = ord(self.convert_case(chr(value), single))
+            if self.use_format and value in _CURLY_BRACKETS_ORD:
+                self.handle_format(chr(value), i)
+            elif value <= 0xFF:
                 self.result.append('\\%03o' % value)
             else:
-                self.result.append(_util.uchr(value))
+                self.result.append(chr(value))
 
     def get_named_unicode(self, i):
         """Get named Unicode."""
@@ -783,8 +880,6 @@ class _ReplaceParser(object):
                 raise SyntaxError("Named Unicode missing '{'' at %d!" % (i.index - 1))
             c = next(i)
             while c != '}':
-                if c not in _WORD and c != ' ':
-                    raise SyntaxError("Bad named Unicode character at %d!" % (index - 1))
                 value.append(c)
                 c = next(i)
         except StopIteration:
@@ -798,14 +893,16 @@ class _ReplaceParser(object):
         value = ord(_unicodedata.lookup(self.get_named_unicode(i)))
         single = self.get_single_stack()
         if self.span_stack:
-            text = self.convert_case(_util.uchr(value), self.span_stack[-1])
+            text = self.convert_case(chr(value), self.span_stack[-1])
             value = ord(self.convert_case(text, single)) if single is not None else ord(text)
         elif single:
-            value = ord(self.convert_case(_util.uchr(value), single))
-        if value <= 0xFF:
+            value = ord(self.convert_case(chr(value), single))
+        if self.use_format and value in _CURLY_BRACKETS_ORD:
+            self.handle_format(chr(value), i)
+        elif value <= 0xFF:
             self.result.append('\\%03o' % value)
         else:
-            self.result.append(_util.uchr(value))
+            self.result.append(chr(value))
 
     def get_wide_unicode(self, i):
         """Get narrow Unicode."""
@@ -851,14 +948,16 @@ class _ReplaceParser(object):
         value = int(text, 16)
         single = self.get_single_stack()
         if self.span_stack:
-            text = self.convert_case(_util.uchr(value), self.span_stack[-1])
+            text = self.convert_case(chr(value), self.span_stack[-1])
             value = ord(self.convert_case(text, single)) if single is not None else ord(text)
         elif single:
-            value = ord(self.convert_case(_util.uchr(value), single))
-        if value <= 0xFF:
+            value = ord(self.convert_case(chr(value), single))
+        if self.use_format and value in _CURLY_BRACKETS_ORD:
+            self.handle_format(chr(value), i)
+        elif value <= 0xFF:
             self.result.append('\\%03o' % value)
         else:
-            self.result.append(_util.uchr(value))
+            self.result.append(chr(value))
 
     def get_byte(self, i):
         """Get byte."""
@@ -882,7 +981,10 @@ class _ReplaceParser(object):
             value = ord(self.convert_case(text, single)) if single is not None else ord(text)
         elif single:
             value = ord(self.convert_case(chr(value), single))
-        self.result.append('\\%03o' % value)
+        if self.use_format and value in _CURLY_BRACKETS_ORD:
+            self.handle_format(chr(value), i)
+        else:
+            self.result.append('\\%03o' % value)
 
     def get_named_group(self, t, i):
         """Get group number."""
@@ -903,11 +1005,11 @@ class _ReplaceParser(object):
                         value.append(c)
                     c = next(i)
                 value.append(c)
-            elif c in _WORD:
+            elif c in _LETTERS_UNDERSCORE:
                 value.append(c)
                 c = next(i)
                 while c != '>':
-                    if c in _WORD or c in _DIGIT:
+                    if c in _WORD:
                         value.append(c)
                     c = next(i)
                 value.append(c)
@@ -934,13 +1036,42 @@ class _ReplaceParser(object):
             pass
         return ''.join(value) if value else None
 
+    def format_next(self, i):
+        """Get next format char."""
+
+        c = next(i)
+        return self.format_references(next(i), i) if c == '\\' else c
+
+    def format_references(self, t, i):
+        """Handle format references."""
+
+        octal = self.get_octal(t, i)
+        if octal:
+            value = int(octal, 8)
+            if value > 0xFF and self.is_bytes:
+                # Re fails on octal greater than `0o377` or `0xFF`
+                raise ValueError("octal escape value outside of range 0-0o377!")
+            value = chr(value)
+        elif t in _STANDARD_ESCAPES or t == '\\':
+            value = _BACK_SLASH_TRANSLATION['\\' + t]
+        elif not self.is_bytes and t == "U":
+            value = chr(int(self.get_wide_unicode(i), 16))
+        elif not self.is_bytes and t == "u":
+            value = chr(int(self.get_narrow_unicode(i), 16))
+        elif not self.is_bytes and t == "N":
+            value = _unicodedata.lookup(self.get_named_unicode(i))
+        elif t == "x":
+            value = chr(int(self.get_byte(i), 16))
+        else:
+            i.rewind(1)
+            value = '\\'
+        return value
+
     def reference(self, t, i):
         """Handle references."""
         octal = self.get_octal(t, i)
-        if t in _OCTAL and (self.use_format or octal):
-            if not octal:
-                octal = self.get_group(t, i)
-            self.parse_octal(octal)
+        if t in _OCTAL and octal:
+            self.parse_octal(octal, i)
         elif (t in _DIGIT or t == 'g') and not self.use_format:
             group = self.get_group(t, i)
             if not group:
@@ -959,11 +1090,11 @@ class _ReplaceParser(object):
             self.span_case(i, _UPPER)
         elif t == "E":
             self.end_found = True
-        elif not self.binary and not _NARROW and t == "U":
+        elif not self.is_bytes and t == "U":
             self.parse_unicode(i, True)
-        elif not self.binary and t == "u":
+        elif not self.is_bytes and t == "u":
             self.parse_unicode(i)
-        elif not self.binary and t == "N":
+        elif not self.is_bytes and t == "N":
             self.parse_named_unicode(i)
         elif t == "x":
             self.parse_bytes(i)
@@ -983,8 +1114,8 @@ class _ReplaceParser(object):
     def parse_template(self, pattern):
         """Parse template."""
 
-        i = _util.StringIter((self._original.decode('latin-1') if self.binary else self._original))
-        iter(i)
+        i = _util.StringIter((self._original.decode('latin-1') if self.is_bytes else self._original))
+
         self.result = [""]
 
         while True:
@@ -1011,7 +1142,7 @@ class _ReplaceParser(object):
             self.result.append("")
             self.slot += 1
 
-        if self.binary:
+        if self.is_bytes:
             self._template = "".join(self.literal_slots).encode('latin-1')
         else:
             self._template = "".join(self.literal_slots)
@@ -1020,7 +1151,13 @@ class _ReplaceParser(object):
     def span_case(self, i, case):
         """Uppercase or lowercase the next range of characters until end marker is found."""
 
+        # A new \L, \C or \E should pop the last in the stack.
+        if self.span_stack:
+            self.span_stack.pop()
+        if self.single_stack:
+            self.single_stack.pop()
         self.span_stack.append(case)
+        count = len(self.span_stack)
         self.end_found = False
         try:
             while not self.end_found:
@@ -1034,25 +1171,20 @@ class _ReplaceParser(object):
                     except StopIteration:
                         self.result.append(t)
                         raise
-                elif self.single_stack:
-                    single = self.get_single_stack()
-                    text = self.convert_case(t, case)
-                    if single:
-                        text = self.convert_case(text[0], single) + text[1:]
-                    self.result.append(text)
                 else:
                     self.result.append(self.convert_case(t, case))
-                if self.end_found:
+                if self.end_found or count > len(self.span_stack):
                     self.end_found = False
                     break
         except StopIteration:
             pass
-        self.span_stack.pop()
+        if count == len(self.span_stack):
+            self.span_stack.pop()
 
     def convert_case(self, value, case):
         """Convert case."""
 
-        if self.binary:
+        if self.is_bytes:
             cased = []
             for c in value:
                 if c in _ASCII_LETTERS:
@@ -1066,6 +1198,9 @@ class _ReplaceParser(object):
     def single_case(self, i, case):
         """Uppercase or lowercase the next character."""
 
+        # Pop a previous case if we have consecutive ones.
+        if self.single_stack:
+            self.single_stack.pop()
         self.single_stack.append(case)
         try:
             t = next(i)
@@ -1078,7 +1213,7 @@ class _ReplaceParser(object):
                 except StopIteration:
                     self.result.append(t)
                     raise
-            else:
+            elif self.single_stack:
                 self.result.append(self.convert_case(t, self.get_single_stack()))
         except StopIteration:
             pass
@@ -1091,47 +1226,19 @@ class _ReplaceParser(object):
             single = self.single_stack.pop()
         return single
 
-    def get_capture(self, text):
-        """Get the capture."""
+    def handle_format_group(self, field, text):
+        """Handle format group."""
 
-        capture = -1
-        base = 10
-        try:
-            index = text.index("[")
-            capture = text[index + 1:-1]
-            text = text[:index]
-            prefix = capture[1:3] if capture[0] == "-" else capture[:2]
-            if prefix[0:1] == "0":
-                char = prefix[-1]
-                if char == "b":
-                    base = 2
-                elif char == "o":
-                    base = 8
-                elif char == "x":
-                    base = 16
-        except ValueError:
-            pass
-
-        if not isinstance(capture, int):
-            try:
-                capture = int(capture, base)
-            except ValueError:
-                raise ValueError("Capture index must be an integer!")
-        return text, capture
-
-    def handle_format_group(self, text):
-        """Handle groups."""
-
-        text, capture = self.get_capture(text)
-
-        # Handle auto or manual format
-        if text == "":
+        # Handle auto incrementing group indexes
+        if field == '':
             if self.auto:
-                text = _util.string_type(self.auto_index)
+                field = str(self.auto_index)
+                text[0] = (_util.FMT_FIELD, field)
                 self.auto_index += 1
             elif not self.manual and not self.auto:
                 self.auto = True
-                text = _util.string_type(self.auto_index)
+                field = str(self.auto_index)
+                text[0] = (_util.FMT_FIELD, field)
                 self.auto_index += 1
             else:
                 raise ValueError("Cannot switch to auto format during manual format!")
@@ -1140,10 +1247,13 @@ class _ReplaceParser(object):
         elif not self.manual:
             raise ValueError("Cannot switch to manual format during auto format!")
 
-        self.handle_group(text, capture, True)
+        self.handle_group(field, tuple(text), True)
 
-    def handle_group(self, text, capture=-1, is_format=False):
+    def handle_group(self, text, capture=None, is_format=False):
         """Handle groups."""
+
+        if capture is None:
+            capture = tuple() if self.is_bytes else ''
 
         if len(self.result) > 1:
             self.literal_slots.append("".join(self.result))
@@ -1163,7 +1273,7 @@ class _ReplaceParser(object):
             (
                 self.slot,
                 (
-                    self.span_stack[-1] if self.span_stack else None,
+                    (self.span_stack[-1] if self.span_stack else None),
                     self.get_single_stack(),
                     capture
                 )
@@ -1179,10 +1289,12 @@ class _ReplaceParser(object):
     def parse(self, pattern, template, use_format=False):
         """Parse template."""
 
-        if isinstance(template, _util.binary_type):
-            self.binary = True
+        if isinstance(template, bytes):
+            self.is_bytes = True
         else:
-            self.binary = False
+            self.is_bytes = False
+        if isinstance(pattern.pattern, bytes) != self.is_bytes:
+            raise TypeError('Pattern string type must match replace template string type!')
         self._original = template
         self.use_format = use_format
         self.parse_template(pattern)
@@ -1192,16 +1304,17 @@ class _ReplaceParser(object):
             tuple(self.group_slots),
             tuple(self.literals),
             hash(pattern),
-            self.use_format
+            self.use_format,
+            self.is_bytes
         )
 
 
 class ReplaceTemplate(_util.Immutable):
     """Replacement template expander."""
 
-    __slots__ = ("groups", "group_slots", "literals", "pattern_hash", "use_format", "_hash")
+    __slots__ = ("groups", "group_slots", "literals", "pattern_hash", "use_format", "_hash", "_bytes")
 
-    def __init__(self, groups, group_slots, literals, pattern_hash, use_format):
+    def __init__(self, groups, group_slots, literals, pattern_hash, use_format, is_bytes):
         """Initialize."""
 
         super(ReplaceTemplate, self).__init__(
@@ -1210,11 +1323,12 @@ class ReplaceTemplate(_util.Immutable):
             group_slots=group_slots,
             literals=literals,
             pattern_hash=pattern_hash,
+            _bytes=is_bytes,
             _hash=hash(
                 (
                     type(self),
                     groups, group_slots, literals,
-                    pattern_hash, use_format
+                    pattern_hash, use_format, is_bytes
                 )
             )
         )
@@ -1238,7 +1352,8 @@ class ReplaceTemplate(_util.Immutable):
             self.group_slots == other.group_slots and
             self.literals == other.literals and
             self.pattern_hash == other.pattern_hash and
-            self.use_format == other.use_format
+            self.use_format == other.use_format and
+            self._bytes == other._bytes
         )
 
     def __ne__(self, other):
@@ -1250,7 +1365,8 @@ class ReplaceTemplate(_util.Immutable):
             self.group_slots != other.group_slots or
             self.literals != other.literals or
             self.pattern_hash != other.pattern_hash or
-            self.use_format != other.use_format
+            self.use_format != other.use_format or
+            self._bytes != self._bytes
         )
 
     def __repr__(self):  # pragma: no cover
@@ -1262,7 +1378,7 @@ class ReplaceTemplate(_util.Immutable):
             self.pattern_hash, self.use_format
         )
 
-    def get_group_index(self, index):
+    def _get_group_index(self, index):
         """Find and return the appropriate group index."""
 
         g_index = None
@@ -1272,7 +1388,7 @@ class ReplaceTemplate(_util.Immutable):
                 break
         return g_index
 
-    def get_group_attributes(self, index):
+    def _get_group_attributes(self, index):
         """Find and return the appropriate group case."""
 
         g_case = (None, None, -1)
@@ -1289,17 +1405,29 @@ class ReplaceTemplate(_util.Immutable):
             raise ValueError("Match is None!")
 
         sep = m.string[:0]
+        if isinstance(sep, bytes) != self._bytes:
+            raise TypeError('Match string type does not match expander string type!')
         text = []
         # Expand string
         for x in range(0, len(self.literals)):
             index = x
             l = self.literals[x]
             if l is None:
-                g_index = self.get_group_index(index)
-                span_case, single_case, capture = self.get_group_attributes(index)
-                if capture not in (0, -1):
-                    raise IndexError("'%d' is out of range!" % capture)
-                l = m.group(g_index)
+                g_index = self._get_group_index(index)
+                span_case, single_case, capture = self._get_group_attributes(index)
+                if not self.use_format:
+                    # Non format replace
+                    try:
+                        l = m.group(g_index)
+                    except IndexError:  # pragma: no cover
+                        raise IndexError("'%d' is out of range!" % g_index)
+                else:
+                    # String format replace
+                    try:
+                        obj = m.group(g_index)
+                    except IndexError:  # pragma: no cover
+                        raise IndexError("'%d' is out of range!" % g_index)
+                    l = _util.format_string(m, obj, capture, self._bytes)
                 if span_case is not None:
                     if span_case == _LOWER:
                         l = l.lower()
@@ -1318,7 +1446,7 @@ class ReplaceTemplate(_util.Immutable):
 def _pickle(r):
     """Pickle."""
 
-    return ReplaceTemplate, (r.groups, r.group_slots, r.literals, r.pattern_hash, r.use_format)
+    return ReplaceTemplate, (r.groups, r.group_slots, r.literals, r.pattern_hash, r.use_format, r._bytes)
 
 
-_util.copyreg.pickle(ReplaceTemplate, _pickle)
+_copyreg.pickle(ReplaceTemplate, _pickle)

@@ -4,6 +4,7 @@ Progress Bar.
 pymdownx.progressbar
 Simple plugin to add support for progress bars
 
+```
 /* No label */
 [==30%]
 
@@ -12,6 +13,7 @@ Simple plugin to add support for progress bars
 
 /* works with attr_list inline style */
 [==50/200  MyLabel]{: .additional-class }
+```
 
 New line is not required before the progress bar but suggested unless in a table.
 Can take percentages and divisions.
@@ -19,70 +21,72 @@ Floats are okay.  Numbers must be positive.  This is an experimental extension.
 Functionality is subject to change.
 
 Minimum Recommended Styling
-(but you could add gloss, candystriping, animation or anything else):
+(but you could add gloss, candy striping, animation, or anything else):
 
+```
 .progress {
-  display: block;
-  width: 300px;
-  margin: 10px 0;
-  height: 24px;
-  border: 1px solid #ccc;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #F8F8F8;
-  position: relative;
-  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+    display: block;
+    width: 300px;
+    margin: 10px 0;
+    height: 24px;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #F8F8F8;
+    position: relative;
+    box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
 }
 
 .progress-label {
-  position: absolute;
-  text-align: center;
-  font-weight: bold;
-  width: 100%; margin: 0;
-  line-height: 24px;
-  color: #333;
-  -webkit-font-smoothing: antialiased !important;
-  white-space: nowrap;
-  overflow: hidden;
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    width: 100%; margin: 0;
+    line-height: 24px;
+    color: #333;
+    -webkit-font-smoothing: antialiased !important;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .progress-bar {
-  height: 24px;
-  float: left;
-  border-right: 1px solid #ccc;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #34c2e3;
-  box-shadow: inset 0 1px 0px rgba(255, 255, 255, .5);
+    height: 24px;
+    float: left;
+    border-right: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #34c2e3;
+    box-shadow: inset 0 1px 0px rgba(255, 255, 255, .5);
 }
 
 For Level Colors
 
 .progress-100plus .progress-bar {
-  background-color: #1ee038;
+    background-color: #1ee038;
 }
 
 .progress-80plus .progress-bar {
-  background-color: #86e01e;
+    background-color: #86e01e;
 }
 
 .progress-60plus .progress-bar {
-  background-color: #f2d31b;
+    background-color: #f2d31b;
 }
 
 .progress-40plus .progress-bar {
-  background-color: #f2b01e;
+    background-color: #f2b01e;
 }
 
 .progress-20plus .progress-bar {
-  background-color: #f27011;
+    background-color: #f27011;
 }
 
 .progress-0plus .progress-bar {
-  background-color: #f63a0f;
+    background-color: #f63a0f;
 }
+```
 
 MIT license.
 
@@ -102,10 +106,9 @@ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABI
 CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 """
-from __future__ import unicode_literals
 from markdown import Extension
-from markdown.inlinepatterns import Pattern, dequote
-from markdown import util as md_util
+from markdown.inlinepatterns import InlineProcessor, dequote
+import xml.etree.ElementTree as etree
 from markdown.extensions.attr_list import AttrListTreeprocessor
 from . import util
 
@@ -120,19 +123,14 @@ RE_PROGRESS = r'''(?x)
 (?P<attr_list>\{\:?([^\}]*)\})?                                     # Optional attr list
 '''
 
-CLASS_100PLUS = "progress-100plus"
-CLASS_80PLUS = "progress-80plus"
-CLASS_60PLUS = "progress-60plus"
-CLASS_40PLUS = "progress-40plus"
-CLASS_20PLUS = "progress-20plus"
-CLASS_0PLUS = "progress-0plus"
+CLASS_LEVEL = "progress-%dplus"
 
 
 class ProgressBarTreeProcessor(AttrListTreeprocessor):
     """Used for AttrList compatibility."""
 
     def run(self, elem):
-        """Inline check for attrs at start of tail."""
+        """Inline check for attributes at start of tail."""
 
         if elem.tail:
             m = self.INLINE_RE.match(elem.tail)
@@ -141,13 +139,13 @@ class ProgressBarTreeProcessor(AttrListTreeprocessor):
                 elem.tail = elem.tail[m.end():]
 
 
-class ProgressBarPattern(Pattern):
+class ProgressBarPattern(InlineProcessor):
     """Pattern handler for the progress bars."""
 
-    def __init__(self, pattern):
-        """Intialize."""
+    def __init__(self, pattern, md):
+        """Initialize."""
 
-        Pattern.__init__(self, pattern)
+        InlineProcessor.__init__(self, pattern, md)
 
     def create_tag(self, width, label, add_classes, alist):
         """Create the tag."""
@@ -161,25 +159,26 @@ class ProgressBarPattern(Pattern):
             )
         )
         classes.sort()
-        el = md_util.etree.Element("div")
+        el = etree.Element("div")
         el.set('class', ' '.join(classes))
-        bar = md_util.etree.SubElement(el, 'div')
+        bar = etree.SubElement(el, 'div')
         bar.set('class', "progress-bar")
         bar.set('style', 'width:%s%%' % width)
-        p = md_util.etree.SubElement(bar, 'p')
+        p = etree.SubElement(bar, 'p')
         p.set('class', 'progress-label')
         p.text = label
         if alist is not None:
             el.tail = alist
-            if 'attr_list' in self.markdown.treeprocessors.keys():
-                ProgressBarTreeProcessor(self.markdown).run(el)
+            if 'attr_list' in self.md.treeprocessors:
+                ProgressBarTreeProcessor(self.md).run(el)
         return el
 
-    def handleMatch(self, m):
+    def handleMatch(self, m, data):
         """Handle the match."""
 
         label = ""
         level_class = self.config.get('level_class', False)
+        increment = self.config.get('progress_increment', 20)
         add_classes = []
         alist = None
         if m.group(5):
@@ -187,7 +186,7 @@ class ProgressBarPattern(Pattern):
         if m.group('attr_list'):
             alist = m.group('attr_list')
         if m.group('percent'):
-            value = float(m.group(2))
+            value = float(m.group('percent'))
         else:
             try:
                 num = float(m.group('frac_num'))
@@ -207,25 +206,15 @@ class ProgressBarPattern(Pattern):
         if value > 100.0:
             value = 100.0
 
+        # Round down to nearest increment step and include class if desired
         if level_class:
-            if value >= 100.0:
-                add_classes.append(CLASS_100PLUS)
-            elif value >= 80.0:
-                add_classes.append(CLASS_80PLUS)
-            elif value >= 60.0:
-                add_classes.append(CLASS_60PLUS)
-            elif value >= 40.0:
-                add_classes.append(CLASS_40PLUS)
-            elif value >= 20.0:
-                add_classes.append(CLASS_20PLUS)
-            else:
-                add_classes.append(CLASS_0PLUS)
+            add_classes.append(CLASS_LEVEL % int(value - (value % increment)))
 
-        return self.create_tag('%.2f' % value, label, add_classes, alist)
+        return self.create_tag('%.2f' % value, label, add_classes, alist), m.start(0), m.end(0)
 
 
 class ProgressBarExtension(Extension):
-    """Add progressbar extension to Markdown class."""
+    """Add progress bar extension to Markdown class."""
 
     def __init__(self, *args, **kwargs):
         """Initialize."""
@@ -233,7 +222,11 @@ class ProgressBarExtension(Extension):
         self.config = {
             'level_class': [
                 True,
-                "Include class that defines progress level in increments of 20 - Default: True"
+                "Include class that defines progress level - Default: True"
+            ],
+            'progress_increment': [
+                20,
+                "Progress increment step - Default: 20"
             ],
             'add_classes': [
                 '',
@@ -244,14 +237,13 @@ class ProgressBarExtension(Extension):
 
         super(ProgressBarExtension, self).__init__(*args, **kwargs)
 
-    def extendMarkdown(self, md, md_globals):
+    def extendMarkdown(self, md):
         """Add the progress bar pattern handler."""
 
         util.escape_chars(md, ['='])
-        progress = ProgressBarPattern(RE_PROGRESS)
+        progress = ProgressBarPattern(RE_PROGRESS, md)
         progress.config = self.getConfigs()
-        progress.markdown = md
-        md.inlinePatterns.add("progress-bar", progress, ">escape")
+        md.inlinePatterns.register(progress, "progress-bar", 179)
 
 
 def makeExtension(*args, **kwargs):

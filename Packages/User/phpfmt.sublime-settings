@@ -9,5 +9,5 @@
 	],
 	"php_bin": "/usr/bin/php",
 	"psr2": true,
-	"version": 3
+	"version": 3,
 }

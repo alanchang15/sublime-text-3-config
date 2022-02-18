@@ -55,7 +55,7 @@ class NewSnippetCommand(sublime_plugin.WindowCommand):
             """
             <snippet>
             \t<content><![CDATA[
-            Hello, \${1:this} is a \${2:snippet}.
+            Hello, \\${1:this} is a \\${2:snippet}.
             ]]></content>
             \t<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
             \t<!-- <tabTrigger>hello</tabTrigger> -->
@@ -77,7 +77,7 @@ class NewSyntaxCommand(sublime_plugin.WindowCommand):
             R"""
             %YAML 1.2
             ---
-            # See http://www.sublimetext.com/docs/3/syntax.html
+            # See http://www.sublimetext.com/docs/syntax.html
             file_extensions:
               - ec
             scope: source.example-c

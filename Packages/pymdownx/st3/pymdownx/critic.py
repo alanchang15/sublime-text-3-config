@@ -23,15 +23,15 @@ THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABI
 CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.
 """
-from __future__ import absolute_import
-from __future__ import unicode_literals
 from markdown import Extension
 from markdown.preprocessors import Preprocessor
 from markdown.postprocessors import Postprocessor
+from markdown.util import STX, ETX
 import re
 
-STX = '\u0002'
-ETX = '\u0003'
+SOH = '\u0001'  # start
+EOT = '\u0004'  # end
+
 CRITIC_KEY = "czjqqkd:%s"
 CRITIC_PLACEHOLDER = CRITIC_KEY % r'[0-9]+'
 SINGLE_CRITIC_PLACEHOLDER = r'%(stx)s(?P<key>%(key)s)%(etx)s' % {
@@ -80,11 +80,11 @@ RE_CRITIC = re.compile(ALL_CRITICS, re.DOTALL)
 RE_CRITIC_PLACEHOLDER = re.compile(CRITIC_PLACEHOLDERS)
 RE_CRITIC_SUB_PLACEHOLDER = re.compile(SINGLE_CRITIC_PLACEHOLDER)
 RE_CRITIC_BLOCK = re.compile(r'((?:ins|del|mark)\s+)(class=([\'"]))(.*?)(\3)')
-RE_BLOCK_SEP = re.compile(r'^\n{2,}$')
+RE_BLOCK_SEP = re.compile(r'^(?:\r?\n){2,}$')
 
 
 class CriticStash(object):
-    """Stach critic marks until ready."""
+    """Stash critic marks until ready."""
 
     def __init__(self, stash_key):
         """Initialize."""
@@ -117,7 +117,7 @@ class CriticStash(object):
         key = self.stash_key % str(self.count)
         self.stash[key] = code
         self.count += 1
-        return STX + key + ETX
+        return SOH + key + EOT
 
     def clear(self):
         """Clear the stash."""
@@ -127,7 +127,7 @@ class CriticStash(object):
 
 
 class CriticsPostprocessor(Postprocessor):
-    """Handle cleanup on postprocess for viewing critic marks."""
+    """Handle cleanup on post process for viewing critic marks."""
 
     def __init__(self, critic_stash):
         """Initialize."""
@@ -136,7 +136,7 @@ class CriticsPostprocessor(Postprocessor):
         self.critic_stash = critic_stash
 
     def subrestore(self, m):
-        """Replace all critic tags in the paragraph block <p>(critic del close)(critic ins close)</p> etc."""
+        """Replace all critic tags in the paragraph block `<p>(critic del close)(critic ins close)</p>` etc."""
         content = None
         key = m.group('key')
         if key is not None:
@@ -196,7 +196,7 @@ class CriticViewPreprocessor(Preprocessor):
         )
 
     def _del(self, text):
-        """Hanlde critic deletes."""
+        """Handle critic deletes."""
 
         if RE_BLOCK_SEP.match(text):
             return self.critic_stash.store('<del class="critic break">&nbsp;</del>')
@@ -247,7 +247,7 @@ class CriticViewPreprocessor(Preprocessor):
         """
         Normal critic parser.
 
-        Either removes accepted or rejected crtic marks and replaces with the opposite.
+        Either removes accepted or rejected critic marks and replaces with the opposite.
         Comments are removed and marks are replaced with their content.
         """
         accept = self.config["mode"] == 'accept'
@@ -300,33 +300,21 @@ class CriticExtension(Extension):
 
         super(CriticExtension, self).__init__(*args, **kwargs)
 
-        self.configured = False
-
-    def extendMarkdown(self, md, md_globals):
+    def extendMarkdown(self, md):
         """Register the extension."""
 
-        self.md = md
         md.registerExtension(self)
         self.critic_stash = CriticStash(CRITIC_KEY)
         post = CriticsPostprocessor(self.critic_stash)
         critic = CriticViewPreprocessor(self.critic_stash)
         critic.config = self.getConfigs()
-        md.preprocessors.add('critic', critic, ">normalize_whitespace")
-        md.postprocessors.add("critic-post", post, ">raw_html")
+        md.preprocessors.register(critic, "critic", 31.1)
+        md.postprocessors.register(post, "critic-post", 25)
+        md.registerExtensions(["pymdownx._bypassnorm"], {})
 
     def reset(self):
-        """
-        Try and make sure critic is handled first after "normalize_whitespace".
+        """Clear stash."""
 
-        Wait to until after all extensions have been loaded
-        so we can be as sure as we can that this is the first
-        thing run after "normalize_whitespace"
-        """
-
-        if not self.configured:
-            self.configured = True
-            self.md.preprocessors.link('critic', '>normalize_whitespace')
-            self.md.postprocessors.link('critic-post', '>raw_html')
         self.critic_stash.clear()
 
 

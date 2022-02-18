@@ -1,5 +1,4 @@
 """Unicode Properties from Unicode version 6.1.0 (autogen)."""
-from __future__ import unicode_literals
 
 unicode_alias = {
     "_": {
@@ -12,6 +11,8 @@ unicode_alias = {
         "gc": "generalcategory",
         "gcb": "graphemeclusterbreak",
         "hst": "hangulsyllabletype",
+        "inmc": "indicmatracategory",
+        "insc": "indicsyllabiccategory",
         "jg": "joininggroup",
         "jt": "joiningtype",
         "lb": "linebreak",
@@ -23,6 +24,7 @@ unicode_alias = {
         "nv": "numericvalue",
         "sb": "sentencebreak",
         "sc": "script",
+        "scx": "scriptextensions",
         "wb": "wordbreak"
     },
     "age": {
@@ -64,7 +66,6 @@ unicode_alias = {
     },
     "binary": {
         "ahex": "asciihexdigit",
-        "alnum": "posixalnum",
         "alpha": "alphabetic",
         "bidic": "bidicontrol",
         "bidim": "bidimirrored",
@@ -110,6 +111,10 @@ unicode_alias = {
         "oupper": "otheruppercase",
         "patsyn": "patternsyntax",
         "patws": "patternwhitespace",
+        "posixalpha": "alphabetic",
+        "posixlower": "lowercase",
+        "posixspace": "whitespace",
+        "posixupper": "uppercase",
         "print": "posixprint",
         "qmark": "quotationmark",
         "radical": "radical",
@@ -121,7 +126,6 @@ unicode_alias = {
         "upper": "uppercase",
         "vs": "variationselector",
         "wspace": "whitespace",
-        "xdigit": "posixxdigit",
         "xidc": "xidcontinue",
         "xids": "xidstart"
     },
@@ -395,8 +399,12 @@ unicode_alias = {
         "trailingjamo": "t",
         "voweljamo": "v"
     },
+    "indicmatracategory": {
+    },
+    "indicsyllabiccategory": {
+    },
     "joininggroup": {
-        "tehmarbutagoal": "hamzaonhehgoal"
+        "hamzaonhehgoal": "tehmarbutagoal"
     },
     "joiningtype": {
         "dualjoining": "d",
@@ -407,41 +415,41 @@ unicode_alias = {
         "transparent": "t"
     },
     "linebreak": {
-        "ai": "ambiguous",
-        "al": "alphabetic",
-        "b2": "breakboth",
-        "ba": "breakafter",
-        "bb": "breakbefore",
-        "bk": "mandatorybreak",
-        "cb": "contingentbreak",
-        "cj": "conditionaljapanesestarter",
-        "cl": "closepunctuation",
-        "cm": "combiningmark",
-        "cp": "closeparenthesis",
-        "cr": "carriagereturn",
-        "ex": "exclamation",
-        "gl": "glue",
-        "hl": "hebrewletter",
-        "hy": "hyphen",
-        "id": "ideographic",
-        "in": "inseparable",
-        "inseperable": "inseparable",
-        "is": "infixnumeric",
-        "lf": "linefeed",
-        "nl": "nextline",
-        "ns": "nonstarter",
-        "nu": "numeric",
-        "op": "openpunctuation",
-        "po": "postfixnumeric",
-        "pr": "prefixnumeric",
-        "qu": "quotation",
-        "sa": "complexcontext",
-        "sg": "surrogate",
-        "sp": "space",
-        "sy": "breaksymbols",
-        "wj": "wordjoiner",
-        "xx": "unknown",
-        "zw": "zwspace"
+        "alphabetic": "al",
+        "ambiguous": "ai",
+        "breakafter": "ba",
+        "breakbefore": "bb",
+        "breakboth": "b2",
+        "breaksymbols": "sy",
+        "carriagereturn": "cr",
+        "closeparenthesis": "cp",
+        "closepunctuation": "cl",
+        "combiningmark": "cm",
+        "complexcontext": "sa",
+        "conditionaljapanesestarter": "cj",
+        "contingentbreak": "cb",
+        "exclamation": "ex",
+        "glue": "gl",
+        "hebrewletter": "hl",
+        "hyphen": "hy",
+        "ideographic": "id",
+        "infixnumeric": "is",
+        "inseparable": "in",
+        "inseperable": "in",
+        "linefeed": "lf",
+        "mandatorybreak": "bk",
+        "nextline": "nl",
+        "nonstarter": "ns",
+        "numeric": "nu",
+        "openpunctuation": "op",
+        "postfixnumeric": "po",
+        "prefixnumeric": "pr",
+        "quotation": "qu",
+        "space": "sp",
+        "surrogate": "sg",
+        "unknown": "xx",
+        "wordjoiner": "wj",
+        "zwspace": "zw"
     },
     "nfcquickcheck": {
         "maybe": "m",
@@ -573,6 +581,8 @@ unicode_alias = {
         "zyyy": "common",
         "zzzz": "unknown"
     },
+    "scriptextensions": {
+    },
     "sentencebreak": {
         "at": "aterm",
         "cl": "close",
@@ -599,47 +609,4 @@ unicode_alias = {
         "nu": "numeric",
         "xx": "other"
     }
-}
-enum_names = {
-    "age",
-    "bc",
-    "bidiclass",
-    "blk",
-    "block",
-    "canonicalcombiningclass",
-    "ccc",
-    "decompositiontype",
-    "dt",
-    "ea",
-    "eastasianwidth",
-    "gc",
-    "gcb",
-    "generalcategory",
-    "graphemeclusterbreak",
-    "hangulsyllabletype",
-    "hst",
-    "jg",
-    "joininggroup",
-    "joiningtype",
-    "jt",
-    "lb",
-    "linebreak",
-    "nfcqc",
-    "nfcquickcheck",
-    "nfdqc",
-    "nfdquickcheck",
-    "nfkcqc",
-    "nfkcquickcheck",
-    "nfkdqc",
-    "nfkdquickcheck",
-    "nt",
-    "numerictype",
-    "numericvalue",
-    "nv",
-    "sb",
-    "sc",
-    "script",
-    "sentencebreak",
-    "wb",
-    "wordbreak"
 }

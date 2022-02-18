@@ -1,17 +1,10 @@
 """Download `Unicodedata` files."""
-from __future__ import unicode_literals
-import sys
 import os
 import zipfile
+import codecs
+from urllib.request import urlopen
 
-__version__ = '1.0.0'
-
-PY3 = sys.version_info >= (3, 0) and sys.version_info[0:2] < (4, 0)
-
-if PY3:
-    from urllib.request import urlopen
-else:
-    from urllib2 import urlopen
+__version__ = '2.2.0'
 
 HOME = os.path.dirname(os.path.abspath(__file__))
 
@@ -47,7 +40,10 @@ def unzip_unicode(output, version):
 
 def download_unicodedata(version, output=HOME, no_zip=False):
     """Download Unicode data scripts and blocks."""
-    files = (
+
+    ver = tuple([int(x) for x in version.split('.')])
+
+    files = [
         'UnicodeData.txt',
         'Scripts.txt',
         'Blocks.txt',
@@ -70,7 +66,24 @@ def download_unicodedata(version, output=HOME, no_zip=False):
         'extracted/DerivedJoiningType.txt',
         'extracted/DerivedJoiningGroup.txt',
         'extracted/DerivedCombiningClass.txt'
-    )
+    ]
+
+    files.append('ScriptExtensions.txt')
+    if ver >= (8, 0, 0):
+        files.append('IndicPositionalCategory.txt')
+    else:
+        files.append('IndicMatraCategory.txt')
+    files.append('IndicSyllabicCategory.txt')
+
+    if ver >= (6, 3, 0):
+        files.append('BidiBrackets.txt')
+
+    if ver >= (11, 0, 0):
+        files.append('VerticalOrientation.txt')
+
+    if ver >= (13, 0, 0):
+        files.append('emoji/emoji-data.txt')
+
     http_url = 'http://www.unicode.org/Public/%s/ucd/' % version
     ftp_url = 'ftp://ftp.unicode.org/Public/%s/ucd/' % version
 
@@ -93,7 +106,7 @@ def download_unicodedata(version, output=HOME, no_zip=False):
                 except Exception:
                     print('Failed: %s' % url)
                     continue
-                with open(file_location, 'w') as uf:
+                with codecs.open(file_location, 'w', encoding='utf-8') as uf:
                     uf.write(data.decode('utf-8'))
                 retrieved = True
                 break
@@ -129,7 +142,7 @@ if __name__ == '__main__':
     import argparse
     import unicodedata
 
-    parser = argparse.ArgumentParser(prog='unipropgen', description='Generate a unicode property table.')
+    parser = argparse.ArgumentParser(prog='unidatadownload', description='Generate a unicode property table.')
     parser.add_argument('--version', action='version', version="%(prog)s " + __version__)
     parser.add_argument('--output', default=HOME, help='Output file.')
     parser.add_argument('--unicode-version', default=None, help='Force a specific Unicode version.')
@@ -140,4 +153,4 @@ if __name__ == '__main__':
     else:
         version = args.unicode_version
 
-    get_unicodedata(version, args.output)
+    get_unicodedata(version, output=args.output)
