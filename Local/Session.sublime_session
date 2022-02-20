@@ -1,6 +1,8 @@
 {
 	"folder_history":
 	[
+		"/home/alan/docker-headless-vnc",
+		"/home/alan/docker-centos7-xfce-vnc",
 		"/run/media/alan/sandisk/workspace/alan-workspace/lohasit",
 		"/home/alan/diskstation/share/alan-workspace/workspace",
 		"/home/alan/diskstation/share/alan-workspace/php-workspace",
@@ -10,9 +12,9 @@
 		"/run/media/alan/64GUSB/dahan-workspace"
 	],
 	"last_version": 4126,
-	"last_window_id": 15,
+	"last_window_id": 20,
 	"log_indexing": false,
-	"next_update_check": 1645357122,
+	"next_update_check": 1645443522,
 	"settings":
 	{
 		"new_window_full_screen": false,
@@ -53,6 +55,18 @@
 				"selected_items":
 				[
 					[
+						"t",
+						"Terminus: Toggle Panel"
+					],
+					[
+						"T",
+						"Terminus: Toggle Panel"
+					],
+					[
+						"Package Control: install",
+						"Package Control: Install Package"
+					],
+					[
 						"Package Control: remove",
 						"Package Control: Remove Package"
 					],
@@ -70,10 +84,6 @@
 					],
 					[
 						"Package Control: in",
-						"Package Control: Install Package"
-					],
-					[
-						"Package Control: install",
 						"Package Control: Install Package"
 					]
 				],
@@ -98,9 +108,15 @@
 			},
 			"file_history":
 			[
+				"/home/alan/.config/sublime-text/Packages/Terminus/Terminus.sublime-settings",
+				"/home/alan/.config/sublime-text/Packages/User/Terminus.sublime-settings",
+				"/home/alan/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+				"/home/alan/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
+				"/home/alan/.config/sublime-text/Packages/User/Terminal.sublime-settings",
+				"/home/alan/docker-centos7-xfce-vnc/Dockerfile",
+				"/home/alan/docker-centos7-xfce-vnc/docker-compose.yml",
 				"/run/media/alan/sandisk/workspace/alan-workspace/lohasit/02-wordpress-sites/96bicycle-site/.gitignore",
 				"/run/media/alan/sandisk/workspace/alan-workspace/lohasit/02-wordpress-sites/96bicycle-site/wp-content/plugins/mailpoet/vendor-prefixed/doctrine/dbal/lib/Doctrine/DBAL/Exception.php",
-				"/home/alan/.config/sublime-text/Packages/User/Terminal.sublime-settings",
 				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/live/kefu-service/test/Events.php",
 				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/app/config/gamble.php",
 				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/app/config/app.php",
@@ -219,24 +235,17 @@
 				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/EmailQueue.php",
 				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Explain.php",
 				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/ExplainLang.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameAccount.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameCategory.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameDetail.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameProduct.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameProductPrice.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameRecord.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/IpBlack.php"
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameAccount.php"
 			],
 			"find":
 			{
-				"height": 39.0
+				"height": 41.0
 			},
 			"find_in_files":
 			{
 				"height": 133.0,
 				"where_history":
 				[
-					"/run/media/alan/sandisk/workspace/alan-workspace/lohasit/02-wordpress-sites/96bicycle-site/wp-content/plugins/mailpoet"
 				]
 			},
 			"find_state":
@@ -244,14 +253,6 @@
 				"case_sensitive": false,
 				"find_history":
 				[
-					"DBALException",
-					"#8DCD41",
-					"\n    ",
-					"        \n",
-					"<?",
-					"();",
-					"$transfer",
-					" {"
 				],
 				"highlight": true,
 				"in_selection": false,
@@ -259,7 +260,6 @@
 				"regex": false,
 				"replace_history":
 				[
-					"#EEE"
 				],
 				"reverse": false,
 				"scrollbar_highlights": true,
@@ -271,7 +271,7 @@
 			},
 			"incremental_find":
 			{
-				"height": 39.0
+				"height": 30.0
 			},
 			"input":
 			{
@@ -281,6 +281,10 @@
 			"output.SFTP":
 			{
 				"height": 194.0
+			},
+			"output.Terminus":
+			{
+				"height": 140.0
 			},
 			"output.find_results":
 			{
@@ -293,7 +297,7 @@
 			"pinned_build_system": "",
 			"replace":
 			{
-				"height": 74.0
+				"height": 56.0
 			},
 			"save_all_on_build": true,
 			"select_file":
@@ -326,7 +330,7 @@
 			"show_minimap": true,
 			"show_open_files": true,
 			"show_tabs": true,
-			"side_bar_visible": true,
+			"side_bar_visible": false,
 			"side_bar_width": 374.0,
 			"status_bar_visible": true,
 			"template_settings":
@@ -363,43 +367,12 @@
 			"buffers":
 			[
 				{
-					"contents": "",
+					"file": "/home/alan/docker-headless-vnc/Dockerfile",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 4641,
 						"line_ending": "Unix"
-					},
-					"undo_stack":
-					[
-						[
-							1,
-							1,
-							"insert",
-							{
-								"characters": "<?php"
-							},
-							"BQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAMAAAAAAAAAAAAAAAMAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAFAAAAAAAAAAAAAAA",
-							"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
-						],
-						[
-							2,
-							1,
-							"insert",
-							{
-								"characters": "\n\n"
-							},
-							"AgAAAAUAAAAAAAAABgAAAAAAAAAAAAAABgAAAAAAAAAHAAAAAAAAAAAAAAA",
-							"AQAAAAAAAAABAAAABQAAAAAAAAAFAAAAAAAAAAAAAAAAAPC/"
-						],
-						[
-							3,
-							8,
-							"left_delete",
-							null,
-							"BwAAAAYAAAAAAAAABgAAAAAAAAABAAAACgUAAAAAAAAABQAAAAAAAAABAAAACgQAAAAAAAAABAAAAAAAAAABAAAAcAMAAAAAAAAAAwAAAAAAAAABAAAAaAIAAAAAAAAAAgAAAAAAAAABAAAAcAEAAAAAAAAAAQAAAAAAAAABAAAAPwAAAAAAAAAAAAAAAAAAAAABAAAAPA",
-							"AQAAAAAAAAABAAAABwAAAAAAAAAHAAAAAAAAAAAAAAAAAPC/"
-						]
-					]
+					}
 				}
 			],
 			"build_system": "",
@@ -413,6 +386,18 @@
 				"last_filter": "",
 				"selected_items":
 				[
+					[
+						"t",
+						"Terminus: Toggle Panel"
+					],
+					[
+						"T",
+						"Terminus: Toggle Panel"
+					],
+					[
+						"Package Control: install",
+						"Package Control: Install Package"
+					],
 					[
 						"Package Control: remove",
 						"Package Control: Remove Package"
@@ -431,10 +416,6 @@
 					],
 					[
 						"Package Control: in",
-						"Package Control: Install Package"
-					],
-					[
-						"Package Control: install",
 						"Package Control: Install Package"
 					]
 				],
@@ -459,13 +440,17 @@
 			},
 			"expanded_folders":
 			[
-				"/run/media/alan/sandisk/workspace/alan-workspace/lohasit"
+				"/home/alan/docker-headless-vnc"
 			],
 			"file_history":
 			[
+				"/home/alan/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+				"/home/alan/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
+				"/home/alan/.config/sublime-text/Packages/User/Terminal.sublime-settings",
+				"/home/alan/docker-centos7-xfce-vnc/Dockerfile",
+				"/home/alan/docker-centos7-xfce-vnc/docker-compose.yml",
 				"/run/media/alan/sandisk/workspace/alan-workspace/lohasit/02-wordpress-sites/96bicycle-site/.gitignore",
 				"/run/media/alan/sandisk/workspace/alan-workspace/lohasit/02-wordpress-sites/96bicycle-site/wp-content/plugins/mailpoet/vendor-prefixed/doctrine/dbal/lib/Doctrine/DBAL/Exception.php",
-				"/home/alan/.config/sublime-text/Packages/User/Terminal.sublime-settings",
 				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/live/kefu-service/test/Events.php",
 				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/app/config/gamble.php",
 				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/app/config/app.php",
@@ -586,22 +571,17 @@
 				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/ExplainLang.php",
 				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameAccount.php",
 				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameCategory.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameDetail.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameProduct.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameProductPrice.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameRecord.php",
-				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/IpBlack.php"
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameDetail.php"
 			],
 			"find":
 			{
-				"height": 39.0
+				"height": 41.0
 			},
 			"find_in_files":
 			{
 				"height": 133.0,
 				"where_history":
 				[
-					"/run/media/alan/sandisk/workspace/alan-workspace/lohasit/02-wordpress-sites/96bicycle-site/wp-content/plugins/mailpoet"
 				]
 			},
 			"find_state":
@@ -609,14 +589,6 @@
 				"case_sensitive": false,
 				"find_history":
 				[
-					"DBALException",
-					"#8DCD41",
-					"\n    ",
-					"        \n",
-					"<?",
-					"();",
-					"$transfer",
-					" {"
 				],
 				"highlight": true,
 				"in_selection": false,
@@ -624,7 +596,6 @@
 				"regex": false,
 				"replace_history":
 				[
-					"#EEE"
 				],
 				"reverse": false,
 				"scrollbar_highlights": true,
@@ -637,7 +608,7 @@
 			"folders":
 			[
 				{
-					"path": "/run/media/alan/sandisk/workspace/alan-workspace/lohasit"
+					"path": "/home/alan/docker-headless-vnc"
 				}
 			],
 			"groups":
@@ -647,11 +618,12 @@
 					[
 						{
 							"buffer": 0,
+							"file": "/home/alan/docker-headless-vnc/Dockerfile",
 							"selected": true,
-							"semi_transient": false,
+							"semi_transient": true,
 							"settings":
 							{
-								"buffer_size": 0,
+								"buffer_size": 4641,
 								"regions":
 								{
 								},
@@ -664,7 +636,6 @@
 								],
 								"settings":
 								{
-									"auto_name": "",
 									"bracket_highlighter.busy": false,
 									"bracket_highlighter.locations":
 									{
@@ -683,51 +654,51 @@
 									},
 									"bracket_highlighter.regions":
 									[
-										"bh_unmatched",
-										"bh_unmatched_center",
-										"bh_unmatched_open",
-										"bh_unmatched_close",
-										"bh_unmatched_content",
-										"bh_round",
-										"bh_round_center",
-										"bh_round_open",
-										"bh_round_close",
-										"bh_round_content",
 										"bh_single_quote",
 										"bh_single_quote_center",
 										"bh_single_quote_open",
 										"bh_single_quote_close",
 										"bh_single_quote_content",
-										"bh_default",
-										"bh_default_center",
-										"bh_default_open",
-										"bh_default_close",
-										"bh_default_content",
-										"bh_curly",
-										"bh_curly_center",
-										"bh_curly_open",
-										"bh_curly_close",
-										"bh_curly_content",
-										"bh_c_define",
-										"bh_c_define_center",
-										"bh_c_define_open",
-										"bh_c_define_close",
-										"bh_c_define_content",
 										"bh_angle",
 										"bh_angle_center",
 										"bh_angle_open",
 										"bh_angle_close",
 										"bh_angle_content",
-										"bh_double_quote",
-										"bh_double_quote_center",
-										"bh_double_quote_open",
-										"bh_double_quote_close",
-										"bh_double_quote_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content",
+										"bh_round",
+										"bh_round_center",
+										"bh_round_open",
+										"bh_round_close",
+										"bh_round_content",
 										"bh_tag",
 										"bh_tag_center",
 										"bh_tag_open",
 										"bh_tag_close",
 										"bh_tag_content",
+										"bh_double_quote",
+										"bh_double_quote_center",
+										"bh_double_quote_open",
+										"bh_double_quote_close",
+										"bh_double_quote_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
+										"bh_unmatched",
+										"bh_unmatched_center",
+										"bh_unmatched_open",
+										"bh_unmatched_close",
+										"bh_unmatched_content",
+										"bh_curly",
+										"bh_curly_center",
+										"bh_curly_open",
+										"bh_curly_close",
+										"bh_curly_content",
 										"bh_regex",
 										"bh_regex_center",
 										"bh_regex_open",
@@ -739,9 +710,12 @@
 										"bh_square_close",
 										"bh_square_content"
 									],
-									"default_dir": "/run/media/alan/sandisk/workspace/alan-workspace/lohasit",
 									"incomplete_sync": null,
-									"syntax": "Packages/Text/Plain text.tmLanguage"
+									"is_init_dirty_state": false,
+									"origin_encoding": "ASCII",
+									"remote_loading": false,
+									"synced": false,
+									"syntax": "Packages/Dockerfile Syntax Highlighting/Syntaxes/Dockerfile.sublime-syntax"
 								},
 								"translation.x": 0.0,
 								"translation.y": 0.0,
@@ -756,7 +730,7 @@
 			],
 			"incremental_find":
 			{
-				"height": 39.0
+				"height": 30.0
 			},
 			"input":
 			{
@@ -789,6 +763,10 @@
 			{
 				"height": 194.0
 			},
+			"output.Terminus":
+			{
+				"height": 140.0
+			},
 			"output.find_results":
 			{
 				"height": 0.0
@@ -802,7 +780,7 @@
 			"project": "",
 			"replace":
 			{
-				"height": 74.0
+				"height": 56.0
 			},
 			"save_all_on_build": true,
 			"select_file":
@@ -845,7 +823,377 @@
 			"template_settings":
 			{
 			},
-			"window_id": 7,
+			"window_id": 16,
+			"workspace_name": ""
+		},
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"Twig",
+						"Twig_SimpleFunction"
+					],
+					[
+						"Twi",
+						"Twig_SimpleFunction"
+					],
+					[
+						"out",
+						"out_platform"
+					],
+					[
+						"error",
+						"error_reporting"
+					]
+				]
+			},
+			"buffers":
+			[
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 202.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"t",
+						"Terminus: Toggle Panel"
+					],
+					[
+						"T",
+						"Terminus: Toggle Panel"
+					],
+					[
+						"Package Control: install",
+						"Package Control: Install Package"
+					],
+					[
+						"Package Control: remove",
+						"Package Control: Remove Package"
+					],
+					[
+						"Package Control: ins",
+						"Package Control: Install Package"
+					],
+					[
+						"vme",
+						"View: Toggle Menu"
+					],
+					[
+						"Package Control: remo",
+						"Package Control: Remove Package"
+					],
+					[
+						"Package Control: in",
+						"Package Control: Install Package"
+					]
+				],
+				"width": 504.0
+			},
+			"console":
+			{
+				"height": 120.0,
+				"history":
+				[
+					"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": false,
+				"show_minimap": true,
+				"show_open_files": true,
+				"show_tabs": false,
+				"side_bar_visible": true,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/alan/.config/sublime-text/Packages/Terminus/Terminus.sublime-settings",
+				"/home/alan/.config/sublime-text/Packages/User/Terminus.sublime-settings",
+				"/home/alan/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+				"/home/alan/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
+				"/home/alan/.config/sublime-text/Packages/User/Terminal.sublime-settings",
+				"/home/alan/docker-centos7-xfce-vnc/Dockerfile",
+				"/home/alan/docker-centos7-xfce-vnc/docker-compose.yml",
+				"/run/media/alan/sandisk/workspace/alan-workspace/lohasit/02-wordpress-sites/96bicycle-site/.gitignore",
+				"/run/media/alan/sandisk/workspace/alan-workspace/lohasit/02-wordpress-sites/96bicycle-site/wp-content/plugins/mailpoet/vendor-prefixed/doctrine/dbal/lib/Doctrine/DBAL/Exception.php",
+				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/live/kefu-service/test/Events.php",
+				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/app/config/gamble.php",
+				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/app/config/app.php",
+				"/home/alan/workspace/dahan-app-cn/config.xml",
+				"/home/alan/diskstation/share/alan-workspace/dahan-workspace/dahan168-backend/app/routes/admin/member/logout.php",
+				"/home/alan/Afterglow.sublime-theme",
+				"/home/alan/diskstation/alan-workspace/dahan-workspace/dahan168-backend/app/src/Gamble/MG/Client.php",
+				"/home/alan/.config/sublime-text-3/Packages/User/phpfmt.sublime-settings",
+				"/usr/share/gnome-shell/theme/gnome-classic.css",
+				"/home/alan/.config/sublime-text-3/Packages/User/Terminal.sublime-settings",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Ag/AgModule.php",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Views/play.twig",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Views/index.twig",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/Controllers/IndexController.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/sova_game_report.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/sova_game_record.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/restore_point.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/email_queue.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/tasks/db_backup.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/logs/sova_game_record.log",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/helpers/ag_api.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/cron/scheduler.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/languages/cn/frontend.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/hooks/redirect.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/hooks/auth.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/password_helper.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/menu_helper.php",
+				"/run/media/alan/64GUSB/dahan-workspace/hh9000-8558kk/site/app/helpers/common_helper.php",
+				"/run/media/alan/64GUSB/dahan-workspace/zz9000/app/Modules/Pt/PtModule.php",
+				"/home/alan/.config/sublime-text-3/Packages/Terminal/Terminal.sublime-settings",
+				"/home/alan/.config/sublime-text-3/Packages/User/SFTP.sublime-settings",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Platform/MicroSova.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/AbstractPlatform.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Browser.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Cache.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Config.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Email.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/EmailTemplate.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Engine.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Executor.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Facade.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/GameConfig.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Http.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/ImportHandler.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Inflector.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Pagination.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/PhalconPHP.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Platform.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Pusher.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Template.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/UploadHandler.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/src/Validator.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/account_member.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/account_member_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/account_update.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/category.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/category_status.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/category_update.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/game_account_status.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/import.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/match.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/product.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/product_create.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/product_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/product_delete_all.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/game/product_import.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/role.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/role_create.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/role_update.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/user.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/user_create.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/user_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/user_status.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/user_supervision.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/manage/user_update.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/game_balance.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/game_detail.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/game_history.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/game_history_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/game_transfer.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/game_transfer_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/ip_black.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/ip_black_create.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/ip_black_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/ip_black_delete_all.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/logout.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/online.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/sell_point.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/sell_point_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/sell_point_delete_all.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/sell_point_update.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/transfer.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/transfer_point.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/transfer_point_delete.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/transfer_point_delete_all.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/routes/admin/member/transfer_point_update.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/languages/tw/lobby.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/languages/tw/sms.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Agent.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/AgentDetail.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/AlipayUrl.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Article.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Av.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Bank.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Bet.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BetLog.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Betting.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BettingDetail.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BettingLevel.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BettingRatio.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BonusLevel.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BonusRatio.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Bulletin.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/BulletinLang.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/CronTask.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/EmailQueue.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/Explain.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/ExplainLang.php",
+				"/run/media/alan/64GUSB/dahan-workspace/dahan168-backend/app/models/GameAccount.php"
+			],
+			"find":
+			{
+				"height": 41.0
+			},
+			"find_in_files":
+			{
+				"height": 133.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"scrollbar_highlights": true,
+				"show_context": true,
+				"use_buffer2": true,
+				"use_gitignore": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"groups":
+			[
+				{
+					"sheets":
+					[
+					]
+				},
+				{
+					"sheets":
+					[
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 30.0
+			},
+			"input":
+			{
+				"height": 39.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					],
+					[
+						1,
+						0,
+						2,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					0.5,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.SFTP":
+			{
+				"height": 194.0
+			},
+			"output.Terminus":
+			{
+				"height": 140.0
+			},
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"output.sftp":
+			{
+				"height": 116.0
+			},
+			"pinned_build_system": "",
+			"position": "0,1,0,0,0,0,0,0,0,1920,1080,0",
+			"project": "",
+			"replace":
+			{
+				"height": 56.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": true,
+			"show_tabs": true,
+			"side_bar_visible": false,
+			"side_bar_width": 374.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 20,
 			"workspace_name": ""
 		}
 	],

@@ -10,6 +10,7 @@
 		"Codecs33",
 		"Color Highlighter",
 		"ConvertToUTF8",
+		"Dockerfile Syntax Highlighting",
 		"Emmet",
 		"jQuery",
 		"JsFormat",
@@ -22,6 +23,7 @@
 		"SFTP",
 		"SideBarEnhancements",
 		"Terminal",
+		"Terminus",
 		"Theme - Afterglow",
 	],
 }
